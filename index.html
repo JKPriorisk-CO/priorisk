@@ -10,63 +10,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-   /* =======================
-   ANIMACIONES HERO
-======================= */
-
-.hero-logo{
-animation: logoFade 1.6s ease-out forwards;
-opacity: 0;
-transform: scale(0.92);
-}
-
-.hero h1{
-animation: titleFade 1.4s ease-out forwards;
-animation-delay: 0.4s;
-opacity: 0;
-}
-
-.hero p{
-animation: textFade 1.4s ease-out forwards;
-animation-delay: 0.8s;
-opacity: 0;
-}
-
-.hero-buttons{
-animation: buttonsFade 1.4s ease-out forwards;
-animation-delay: 1.2s;
-opacity: 0;
-}
-
-/* KEYFRAMES */
-
-@keyframes logoFade{
-to{
-opacity:1;
-transform:scale(1);
-}
-}
-
-@keyframes titleFade{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@keyframes textFade{
-to{
-opacity:1;
-}
-}
-
-@keyframes buttonsFade{
-to{
-opacity:1;
-}
-}
-
-<style>
+ <style>
 
 /* =======================
    BASE
@@ -289,8 +233,62 @@ z-index:999;
 width:28px;
 }
 
-</style>
-</head>
+/* =======================
+   ANIMACIONES HERO
+======================= */
+
+.hero-logo{
+animation: logoFade 1.6s ease-out forwards;
+opacity: 0;
+transform: scale(0.92);
+}
+
+.hero h1{
+animation: titleFade 1.4s ease-out forwards;
+animation-delay: 0.4s;
+opacity: 0;
+}
+
+.hero p{
+animation: textFade 1.4s ease-out forwards;
+animation-delay: 0.8s;
+opacity: 0;
+}
+
+.hero-buttons{
+animation: buttonsFade 1.4s ease-out forwards;
+animation-delay: 1.2s;
+opacity: 0;
+}
+
+/* KEYFRAMES */
+
+@keyframes logoFade{
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+@keyframes titleFade{
+to{
+opacity:1;
+}
+}
+
+@keyframes textFade{
+to{
+opacity:1;
+}
+}
+
+@keyframes buttonsFade{
+to{
+opacity:1;
+}
+}
+
+ </style>
 
 <body>
 
@@ -378,5 +376,6 @@ Firma especializada en gestión integral del riesgo ejecutivo basada en intelige
 
 </body>
 </html>
+
 
 
