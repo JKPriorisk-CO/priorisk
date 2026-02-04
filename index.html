@@ -10,7 +10,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
- <style>
+<style>
 
 /* =======================
    BASE
@@ -64,13 +64,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-background:
-linear-gradient(
-135deg,
-#0B0D10 0%,
-#141821 50%,
-#1C2230 100%
-);
+background:linear-gradient(135deg,#0B0D10 0%,#141821 50%,#1C2230 100%);
 padding:20px;
 }
 
@@ -83,28 +77,39 @@ align-items:center;
 .hero-logo{
 width:340px;
 margin-bottom:45px;
-filter: drop-shadow(0 14px 30px rgba(0,0,0,0.65));
+opacity:0;
+transform:scale(0.92);
+animation:logoFade 1.6s ease-out forwards;
 }
 
 .hero h1{
 font-size:3rem;
 margin-bottom:30px;
 letter-spacing:1.2px;
+opacity:0;
+animation:titleFade 1.4s ease-out forwards;
+animation-delay:0.4s;
 }
 
 .hero p{
-max-width:750px;
+max-width:760px;
 font-size:1.2rem;
 color:#B5B8C2;
+opacity:0;
+animation:textFade 1.4s ease-out forwards;
+animation-delay:0.8s;
+}
+
+.hero-buttons{
+margin-top:40px;
+opacity:0;
+animation:buttonsFade 1.4s ease-out forwards;
+animation-delay:1.2s;
 }
 
 /* =======================
    BOTONES
 ======================= */
-
-.hero-buttons{
-margin-top:40px;
-}
 
 .btn{
 padding:14px 30px;
@@ -149,7 +154,6 @@ margin:auto;
 section h2{
 text-align:center;
 margin-bottom:50px;
-color:#F5F6F8;
 }
 
 /* =======================
@@ -179,7 +183,7 @@ color:#B5B8C2;
 }
 
 /* =======================
-   CTA FINAL
+   CTA
 ======================= */
 
 .cta{
@@ -187,14 +191,6 @@ background:#141821;
 text-align:center;
 padding:90px 20px;
 border-top:1px solid #2A2F3A;
-}
-
-.cta h2{
-margin-bottom:20px;
-}
-
-.cta p{
-color:#B5B8C2;
 }
 
 /* =======================
@@ -234,61 +230,27 @@ width:28px;
 }
 
 /* =======================
-   ANIMACIONES HERO
+   ANIMACIONES
 ======================= */
 
-.hero-logo{
-animation: logoFade 1.6s ease-out forwards;
-opacity: 0;
-transform: scale(0.92);
-}
-
-.hero h1{
-animation: titleFade 1.4s ease-out forwards;
-animation-delay: 0.4s;
-opacity: 0;
-}
-
-.hero p{
-animation: textFade 1.4s ease-out forwards;
-animation-delay: 0.8s;
-opacity: 0;
-}
-
-.hero-buttons{
-animation: buttonsFade 1.4s ease-out forwards;
-animation-delay: 1.2s;
-opacity: 0;
-}
-
-/* KEYFRAMES */
-
 @keyframes logoFade{
-to{
-opacity:1;
-transform:scale(1);
-}
+to{opacity:1; transform:scale(1);}
 }
 
 @keyframes titleFade{
-to{
-opacity:1;
-}
+to{opacity:1;}
 }
 
 @keyframes textFade{
-to{
-opacity:1;
-}
+to{opacity:1;}
 }
 
 @keyframes buttonsFade{
-to{
-opacity:1;
-}
+to{opacity:1;}
 }
 
- </style>
+</style>
+</head>
 
 <body>
 
@@ -306,12 +268,12 @@ opacity:1;
 <section class="hero">
 <div class="hero-content">
 
-<img src="logo-escudo.png" class="hero-logo" alt="PRIORISK Escudo">
+<img src="logo-escudo.png" class="hero-logo" alt="PRIORISK">
 
 <h1>GESTIÓN INTEGRAL DEL RIESGO EJECUTIVO</h1>
 
 <p>
-Firma especializada en gestión integral del riesgo ejecutivo basada en inteligencia estratégica y análisis multidimensional, orientada a la protección de organizaciones y liderazgos con alta exposición.
+Firma especializada en gestión integral del riesgo ejecutivo basada en inteligencia estratégica y análisis multidimensional.
 </p>
 
 <div class="hero-buttons">
@@ -324,46 +286,16 @@ Firma especializada en gestión integral del riesgo ejecutivo basada en intelige
 
 <section>
 <h2>Exposición del Riesgo Organizacional</h2>
-
 <div class="grid">
-
-<div class="card">
-<h3>Riesgo Físico</h3>
-<p>Amenazas a la integridad personal y activos críticos.</p>
-</div>
-
-<div class="card">
-<h3>Riesgo Reputacional</h3>
-<p>Impacto mediático, social y corporativo.</p>
-</div>
-
-<div class="card">
-<h3>Riesgo Operacional</h3>
-<p>Vulnerabilidades internas e interrupciones estratégicas.</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<h2>Modelo Estratégico PRIORISK</h2>
-
-<div class="grid">
-
-<div class="card">Diagnóstico Estratégico</div>
-<div class="card">Evaluación Multidimensional</div>
-<div class="card">Diseño de Soluciones</div>
-<div class="card">Implementación Operativa</div>
-
+<div class="card"><h3>Riesgo Físico</h3><p>Amenazas a personas y activos.</p></div>
+<div class="card"><h3>Riesgo Reputacional</h3><p>Impacto mediático y corporativo.</p></div>
+<div class="card"><h3>Riesgo Operacional</h3><p>Vulnerabilidades críticas.</p></div>
 </div>
 </section>
 
 <section class="cta">
 <h2>Solicitar Evaluación Estratégica del Riesgo</h2>
-<p>
-📩 priorisk@gmail.com<br>
-📞 +57 321 905 7059
-</p>
+<p>📩 priorisk@gmail.com<br>📞 +57 321 905 7059</p>
 </section>
 
 <footer>
@@ -371,11 +303,8 @@ Firma especializada en gestión integral del riesgo ejecutivo basada en intelige
 </footer>
 
 <a class="whatsapp" href="https://wa.me/573219057059" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
 </body>
 </html>
-
-
-
