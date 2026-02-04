@@ -3,171 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PRIORISK</title>
+
+<title>PRIORISK | Gestión Integral del Riesgo Ejecutivo</title>
+
+<meta name="description" content="Firma especializada en gestión integral del riesgo ejecutivo basada en inteligencia estratégica y análisis multidimensional.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
-font-family:Segoe UI, Arial, sans-serif;
-background:#0b0b0b;
-color:white;
-scroll-behavior:smooth;
+font-family:'Inter', sans-serif;
+background:#F8FAFC;
+color:#0B1F3A;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+header img{
+height:50px;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+font-weight:600;
+color:#0B1F3A;
 }
 
 /* HERO */
 
 .hero{
-background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.9)), url('logo-auxiliar.png');
-background-size:600px;
-background-repeat:no-repeat;
-background-position:right center;
-padding:120px 20px;
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-}
-
-.hero img{
-width:260px;
-margin-bottom:25px;
+background:linear-gradient(135deg,#0B1F3A,#1E3A8A);
+color:white;
+padding:20px;
 }
 
 .hero h1{
-font-size:38px;
-letter-spacing:2px;
+font-size:3rem;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:18px;
-opacity:0.85;
+max-width:700px;
+margin:auto;
+font-size:1.2rem;
 }
 
-/* BOTONES */
+.hero-buttons{
+margin-top:30px;
+}
 
-.button{
-display:inline-block;
-padding:15px 35px;
-background:#c9a227;
-color:black;
-font-weight:bold;
-text-decoration:none;
-border-radius:4px;
+.btn{
+padding:14px 28px;
+border-radius:6px;
+border:none;
+font-weight:600;
+cursor:pointer;
 margin:10px;
-transition:0.3s;
 }
 
-.button:hover{
-background:#e0b93b;
-transform:scale(1.05);
+.btn-primary{
+background:white;
+color:#0B1F3A;
+}
+
+.btn-secondary{
+background:transparent;
+border:2px solid white;
+color:white;
 }
 
 /* SECCIONES */
 
-.section{
-padding:90px 20px;
-text-align:center;
-}
-
-.section-light{
-background:white;
-color:#222;
-}
-
-.container{
+section{
+padding:80px 20px;
 max-width:1100px;
 margin:auto;
 }
 
 h2{
-font-size:32px;
-letter-spacing:2px;
-margin-bottom:25px;
+text-align:center;
+margin-bottom:40px;
 }
 
-/* TARJETAS */
+/* BLOQUES */
 
-.cards{
-display:flex;
-flex-wrap:wrap;
-gap:40px;
-justify-content:center;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .card{
-background:#141414;
-padding:35px;
-max-width:280px;
+background:white;
+padding:25px;
 border-radius:8px;
-transition:0.4s;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-.card-light{
-background:#f4f4f4;
-color:#222;
-}
+/* CTA FINAL */
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 25px 40px rgba(0,0,0,0.4);
-}
-
-.icon{
-font-size:40px;
-margin-bottom:15px;
-}
-
-/* FORMULARIO */
-
-input, textarea{
-width:90%;
-max-width:500px;
-padding:12px;
-margin:10px;
-border-radius:5px;
-border:none;
-font-size:16px;
+.cta{
+background:#0B1F3A;
+color:white;
+text-align:center;
+padding:80px 20px;
 }
 
 /* FOOTER */
 
 footer{
-background:black;
-padding:40px;
+background:#020617;
+color:white;
 text-align:center;
-font-size:14px;
+padding:40px 20px;
+font-size:0.9rem;
 }
 
-/* WHATSAPP FLOTANTE */
+/* WHATSAPP FLOAT */
 
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:white;
-padding:12px 15px;
-border-radius:50px;
-font-size:20px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-transition:0.3s;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.3);
 z-index:999;
 }
 
-.whatsapp:hover{
-transform:scale(1.1);
-}
-
-/* ANIMACIONES */
-
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:all 1.2s ease;
-}
-
-.fade.visible{
-opacity:1;
-transform:translateY(0);
+.whatsapp img{
+width:30px;
 }
 
 </style>
@@ -175,140 +165,81 @@ transform:translateY(0);
 
 <body>
 
-<!-- HERO -->
+<header>
+<img src="logo1.png" alt="PRIORISK">
+<nav>
+<a href="#">Inicio</a>
+<a href="#">Servicios</a>
+<a href="#">Metodología</a>
+<a href="#">Clientes</a>
+<a href="#">Contacto</a>
+</nav>
+</header>
 
-<section class="hero fade">
-
-<img src="logo-principal.png">
-
-<h1>DIAGNÓSTICO ESTRATÉGICO DE RIESGO</h1>
-
-<p>
-Protección ejecutiva basada en inteligencia estratégica y análisis multidimensional.
-</p>
-
-<a href="#contacto" class="button">SOLICITAR EVALUACIÓN</a>
-
-</section>
-
-<!-- QUIÉNES SOMOS -->
-
-<section class="section fade">
-<div class="container">
-
-<h2>QUIÉNES SOMOS</h2>
+<section class="hero">
+<div>
+<h1>GESTIÓN INTEGRAL DEL RIESGO EJECUTIVO</h1>
 
 <p>
-PRIORISK es una firma especializada en análisis estratégico de riesgo físico,
-reputacional y operacional para ejecutivos y organizaciones con exposición elevada.
+Firma especializada en gestión integral del riesgo ejecutivo basada en inteligencia estratégica y análisis multidimensional.
 </p>
 
+<div class="hero-buttons">
+<button class="btn btn-primary">Solicitar Evaluación</button>
+<button class="btn btn-secondary">Agendar Reunión</button>
+</div>
 </div>
 </section>
 
-<!-- SERVICIOS -->
+<section>
+<h2>Exposición del Riesgo Organizacional</h2>
 
-<section class="section section-light fade">
-<div class="container">
-
-<h2>NUESTROS SERVICIOS</h2>
-
-<div class="cards">
-
-<div class="card card-light">
-<div class="icon">🛡</div>
-<h3>DIAGNÓSTICO</h3>
-<p>Evaluación integral de riesgos físicos y reputacionales.</p>
+<div class="grid">
+<div class="card">
+<h3>Riesgo Físico</h3>
+<p>Amenazas a integridad personal y activos críticos.</p>
 </div>
 
-<div class="card card-light">
-<div class="icon">📊</div>
-<h3>CONSULTORÍA</h3>
-<p>Diseño de estrategias avanzadas de mitigación de amenazas.</p>
+<div class="card">
+<h3>Riesgo Reputacional</h3>
+<p>Impacto mediático, social y corporativo.</p>
 </div>
 
-<div class="card card-light">
-<div class="icon">⚙</div>
-<h3>IMPLEMENTACIÓN</h3>
-<p>Despliegue de soluciones de protección ejecutiva y seguridad corporativa.</p>
+<div class="card">
+<h3>Riesgo Operacional</h3>
+<p>Interrupciones y vulnerabilidades organizacionales.</p>
 </div>
-
-</div>
-
 </div>
 </section>
 
-<!-- CLIENTES -->
+<section>
+<h2>Modelo Estratégico PRIORISK</h2>
 
-<section class="section fade">
-<div class="container">
+<div class="grid">
+<div class="card">Diagnóstico Estratégico</div>
+<div class="card">Evaluación Multidimensional</div>
+<div class="card">Diseño de Soluciones</div>
+<div class="card">Implementación Operativa</div>
+</div>
+</section>
 
-<h2>CLIENTES OBJETIVO</h2>
+<section class="cta">
+<h2>Solicitar Evaluación Estratégica del Riesgo</h2>
+<p>Contacto confidencial y especializado.</p>
 
 <p>
-CEO, familias empresarias, directivos estratégicos, profesionales de alto perfil
-y organizaciones multilaterales.
+📩 priorisk@gmail.com <br>
+📞 +57 3219057059
 </p>
-
-</div>
-</section>
-
-<!-- FORMULARIO REAL -->
-
-<section id="contacto" class="section section-light fade">
-
-<h2>CONTACTO</h2>
-
-<form action="mailto:priorisk@gmail.com" method="POST" enctype="text/plain">
-
-<input type="text" name="Nombre" placeholder="Nombre completo" required>
-
-<br>
-
-<input type="email" name="Correo" placeholder="Correo electrónico" required>
-
-<br>
-
-<textarea name="Mensaje" rows="5" placeholder="Describe brevemente tu necesidad"></textarea>
-
-<br>
-
-<button class="button" type="submit">ENVIAR SOLICITUD</button>
-
-</form>
-
 </section>
 
 <footer>
-
-<img src="logo-escudo.png" width="80"><br><br>
-
-PRIORISK © 2026  
-Protección Ejecutiva Estratégica
-
+<p>© 2026 PRIORISK — Colombia</p>
 </footer>
 
-<!-- WHATSAPP FLOTANTE -->
-
-<a class="whatsapp" href="https://wa.me/573219057059">💬</a>
-
-<!-- SCRIPT ANIMACIONES -->
-
-<script>
-
-const elements = document.querySelectorAll('.fade');
-
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-entry.target.classList.add('visible');
-}
-});
-});
-
-elements.forEach(el => observer.observe(el));
-
-</script>
+<a class="whatsapp" href="https://wa.me/573219057059" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
 
 </body>
 </html>
