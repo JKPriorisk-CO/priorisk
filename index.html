@@ -12,22 +12,28 @@
 
 <style>
 
+/* =======================
+   BASE
+======================= */
+
 body{
 margin:0;
 font-family:'Inter', sans-serif;
-background:#F8FAFC;
-color:#0B1F3A;
+background:#0B0D10;
+color:#F5F6F8;
 }
 
-/* HEADER */
+/* =======================
+   HEADER
+======================= */
 
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 40px;
-background:white;
-box-shadow:0 2px 8px rgba(0,0,0,0.05);
+background:#0B0D10;
+border-bottom:1px solid #2A2F3A;
 position:sticky;
 top:0;
 z-index:1000;
@@ -41,81 +47,114 @@ nav a{
 margin-left:25px;
 text-decoration:none;
 font-weight:600;
-color:#0B1F3A;
+color:#B5B8C2;
 }
 
-/* HERO */
+nav a:hover{
+color:#E0C878;
+}
+
+/* =======================
+   HERO
+======================= */
 
 .hero{
-height:90vh;
+height:95vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-background:linear-gradient(135deg,#0B1F3A,#1E3A8A);
-color:white;
+background:
+linear-gradient(
+135deg,
+#0B0D10 0%,
+#141821 50%,
+#1C2230 100%
+);
 padding:20px;
 }
 
-.hero-logo{
-width:320px;
-margin-bottom:35px;
-  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.4));
+.hero-content{
+display:flex;
+flex-direction:column;
+align-items:center;
 }
-padding:15px;
-background:rgba(255,255,255,0.05);
-border-radius:12px;
+
+.hero-logo{
+width:240px;
+margin-bottom:40px;
+filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6));
 }
 
 .hero h1{
-font-size:3rem;
-margin-bottom:20px;
+font-size:3.2rem;
+margin-bottom:25px;
+letter-spacing:1px;
 }
 
 .hero p{
-max-width:700px;
-margin:auto;
+max-width:750px;
 font-size:1.2rem;
+color:#B5B8C2;
 }
 
+/* =======================
+   BOTONES
+======================= */
+
 .hero-buttons{
-margin-top:30px;
+margin-top:40px;
 }
 
 .btn{
-padding:14px 28px;
+padding:14px 30px;
 border-radius:6px;
 border:none;
 font-weight:600;
 cursor:pointer;
 margin:10px;
+font-size:1rem;
 }
 
 .btn-primary{
-background:white;
-color:#0B1F3A;
+background:#C9A24D;
+color:#0B0D10;
+}
+
+.btn-primary:hover{
+background:#E0C878;
 }
 
 .btn-secondary{
 background:transparent;
-border:2px solid white;
-color:white;
+border:2px solid #C9A24D;
+color:#E0C878;
 }
 
-/* SECCIONES */
+.btn-secondary:hover{
+background:#C9A24D;
+color:#0B0D10;
+}
+
+/* =======================
+   SECCIONES
+======================= */
 
 section{
-padding:80px 20px;
+padding:90px 20px;
 max-width:1100px;
 margin:auto;
 }
 
-h2{
+section h2{
 text-align:center;
-margin-bottom:40px;
+margin-bottom:50px;
+color:#F5F6F8;
 }
 
-/* BLOQUES */
+/* =======================
+   CARDS
+======================= */
 
 .grid{
 display:grid;
@@ -124,32 +163,56 @@ gap:30px;
 }
 
 .card{
-background:white;
-padding:25px;
+background:#141821;
+padding:30px;
 border-radius:8px;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+border:1px solid #2A2F3A;
 }
 
-/* CTA FINAL */
+.card h3{
+color:#E0C878;
+margin-bottom:15px;
+}
+
+.card p{
+color:#B5B8C2;
+}
+
+/* =======================
+   CTA FINAL
+======================= */
 
 .cta{
-background:#0B1F3A;
-color:white;
+background:#141821;
 text-align:center;
-padding:80px 20px;
+padding:90px 20px;
+border-top:1px solid #2A2F3A;
 }
 
-/* FOOTER */
+.cta h2{
+margin-bottom:20px;
+}
+
+.cta p{
+color:#B5B8C2;
+}
+
+/* =======================
+   FOOTER
+======================= */
 
 footer{
-background:#020617;
-color:white;
+background:#0B0D10;
+border-top:1px solid #2A2F3A;
 text-align:center;
 padding:40px 20px;
 font-size:0.9rem;
+color:#B5B8C2;
 }
 
-/* WHATSAPP FLOAT */
+/* =======================
+   WHATSAPP
+======================= */
 
 .whatsapp{
 position:fixed;
@@ -162,12 +225,12 @@ border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-box-shadow:0 4px 12px rgba(0,0,0,0.3);
+box-shadow:0 4px 12px rgba(0,0,0,0.4);
 z-index:999;
 }
 
 .whatsapp img{
-width:30px;
+width:28px;
 }
 
 </style>
@@ -187,19 +250,19 @@ width:30px;
 </header>
 
 <section class="hero">
-<div style="display:flex; flex-direction:column; align-items:center;">
+<div class="hero-content">
 
-<img src="logo-escudo.png" class="hero-logo" alt="PRIORISK">
+<img src="logo-escudo.png" class="hero-logo" alt="PRIORISK Escudo">
 
 <h1>GESTIÓN INTEGRAL DEL RIESGO EJECUTIVO</h1>
 
 <p>
-Firma especializada en gestión integral del riesgo ejecutivo basada en inteligencia estratégica y análisis multidimensional.
+Firma especializada en gestión integral del riesgo ejecutivo basada en inteligencia estratégica y análisis multidimensional, orientada a la protección de organizaciones y liderazgos con alta exposición.
 </p>
 
 <div class="hero-buttons">
-<button class="btn btn-primary">Solicitar Evaluación</button>
-<button class="btn btn-secondary">Agendar Reunión</button>
+<button class="btn btn-primary">Solicitar Evaluación Estratégica</button>
+<button class="btn btn-secondary">Agendar Reunión Confidencial</button>
 </div>
 
 </div>
@@ -212,7 +275,7 @@ Firma especializada en gestión integral del riesgo ejecutivo basada en intelige
 
 <div class="card">
 <h3>Riesgo Físico</h3>
-<p>Amenazas a integridad personal y activos críticos.</p>
+<p>Amenazas a la integridad personal y activos críticos.</p>
 </div>
 
 <div class="card">
@@ -222,7 +285,7 @@ Firma especializada en gestión integral del riesgo ejecutivo basada en intelige
 
 <div class="card">
 <h3>Riesgo Operacional</h3>
-<p>Interrupciones y vulnerabilidades organizacionales.</p>
+<p>Vulnerabilidades internas e interrupciones estratégicas.</p>
 </div>
 
 </div>
@@ -243,23 +306,19 @@ Firma especializada en gestión integral del riesgo ejecutivo basada en intelige
 
 <section class="cta">
 <h2>Solicitar Evaluación Estratégica del Riesgo</h2>
-<p>Contacto confidencial y especializado.</p>
-
 <p>
-📩 priorisk@gmail.com <br>
-📞 +57 3219057059
+📩 priorisk@gmail.com<br>
+📞 +57 321 905 7059
 </p>
 </section>
 
 <footer>
-<p>© 2026 PRIORISK — Colombia</p>
+© 2026 PRIORISK — Colombia
 </footer>
 
 <a class="whatsapp" href="https://wa.me/573219057059" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
 </a>
 
 </body>
 </html>
-
-
