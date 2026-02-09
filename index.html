@@ -11,10 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-/* =====================
-   VARIABLES PRIORISK
-===================== */
 :root{
 --black:#0B0D10;
 --dark:#141821;
@@ -23,9 +19,6 @@
 --gold-soft:#E0C878;
 }
 
-/* =====================
-   BASE
-===================== */
 *{box-sizing:border-box;}
 
 body{
@@ -35,9 +28,7 @@ background:var(--black);
 color:#F5F6F8;
 }
 
-/* =====================
-   HEADER
-===================== */
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
@@ -50,9 +41,7 @@ top:0;
 z-index:1000;
 }
 
-header img{
-height:150px;
-}
+header img{height:150px;}
 
 nav a{
 margin-left:34px;
@@ -62,13 +51,9 @@ color:var(--gray);
 letter-spacing:0.6px;
 }
 
-nav a:hover{
-color:var(--gold-soft);
-}
+nav a:hover{color:var(--gold-soft);}
 
-/* =====================
-   HERO
-===================== */
+/* HERO */
 .hero{
 min-height:100vh;
 display:flex;
@@ -115,50 +100,7 @@ animation:textFade 1.4s ease-out forwards;
 animation-delay:0.8s;
 }
 
-.hero-buttons{
-margin-top:50px;
-opacity:0;
-animation:buttonsFade 1.4s ease-out forwards;
-animation-delay:1.2s;
-}
-
-/* =====================
-   BOTONES
-===================== */
-.btn{
-padding:18px 40px;
-border-radius:6px;
-border:none;
-font-weight:600;
-cursor:pointer;
-margin:10px;
-font-size:1.05rem;
-letter-spacing:0.4px;
-}
-
-.btn-primary{
-background:var(--gold);
-color:var(--black);
-}
-
-.btn-primary:hover{
-background:var(--gold-soft);
-}
-
-.btn-secondary{
-background:transparent;
-border:2px solid var(--gold);
-color:var(--gold-soft);
-}
-
-.btn-secondary:hover{
-background:var(--gold);
-color:var(--black);
-}
-
-/* =====================
-   SECCIONES
-===================== */
+/* SECCIONES */
 section{
 padding:110px 20px;
 max-width:1200px;
@@ -169,12 +111,9 @@ section h2{
 text-align:center;
 margin-bottom:65px;
 font-size:2.3rem;
-letter-spacing:1px;
 }
 
-/* =====================
-   GRID / CARDS
-===================== */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -188,21 +127,11 @@ border-radius:8px;
 border:1px solid #2A2F3A;
 }
 
-.card h3{
-color:var(--gold-soft);
-margin-bottom:20px;
-}
+.card h3{color:var(--gold-soft);}
 
-.card p{
-color:var(--gray);
-line-height:1.55;
-}
-
-/* =====================
-   FORMULARIO
-===================== */
+/* FORMULARIO */
 form{
-max-width:700px;
+max-width:720px;
 margin:60px auto 0;
 background:var(--dark);
 padding:45px;
@@ -212,7 +141,7 @@ border:1px solid #2A2F3A;
 
 form label{
 display:block;
-margin-bottom:8px;
+margin-bottom:6px;
 color:var(--gray);
 font-size:0.9rem;
 }
@@ -227,27 +156,23 @@ border-radius:4px;
 border:1px solid #2A2F3A;
 background:#0B0D10;
 color:#F5F6F8;
-font-family:'Inter',sans-serif;
 }
 
-form textarea{
-resize:vertical;
-min-height:120px;
+form textarea{min-height:120px;}
+
+.btn{
+padding:18px 40px;
+border-radius:6px;
+border:none;
+font-weight:600;
+cursor:pointer;
+font-size:1.05rem;
+background:var(--gold);
+color:var(--black);
 }
 
-/* =====================
-   CTA
-===================== */
-.cta{
-background:linear-gradient(135deg,#141821,#0B0D10);
-text-align:center;
-padding:110px 20px;
-border-top:1px solid #2A2F3A;
-}
+.btn:hover{background:var(--gold-soft);}
 
-/* =====================
-   FOOTER
-===================== */
 footer{
 background:var(--black);
 border-top:1px solid #2A2F3A;
@@ -257,36 +182,10 @@ font-size:0.9rem;
 color:var(--gray);
 }
 
-/* =====================
-   WHATSAPP
-===================== */
-.whatsapp{
-position:fixed;
-bottom:22px;
-right:22px;
-background:#25D366;
-width:54px;
-height:54px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 4px 12px rgba(0,0,0,0.45);
-z-index:999;
-}
-
-.whatsapp img{
-width:27px;
-}
-
-/* =====================
-   ANIMACIONES
-===================== */
+/* ANIMACIONES */
 @keyframes logoFade{to{opacity:1;transform:scale(1);}}
 @keyframes titleFade{to{opacity:1;}}
 @keyframes textFade{to{opacity:1;}}
-@keyframes buttonsFade{to{opacity:1;}}
-
 </style>
 </head>
 
@@ -303,62 +202,34 @@ width:27px;
 
 <section class="hero">
 <div class="hero-content">
-
 <img src="logo-escudo1.png" class="hero-logo" alt="PRIORISK Escudo">
-
 <h1>INTELIGENCIA Y GESTIÓN DEL RIESGO EJECUTIVO</h1>
-
-<p>
-Protección ejecutiva y análisis estratégico del riesgo para organizaciones
-y líderes con alta exposición operativa, reputacional y física.
-</p>
-
-<div class="hero-buttons">
-<button class="btn btn-primary">Solicitar Evaluación Estratégica</button>
-<button class="btn btn-secondary">Agendar Reunión Confidencial</button>
-</div>
-
+<p>Protección ejecutiva y análisis estratégico del riesgo para organizaciones y líderes con alta exposición.</p>
 </div>
 </section>
 
 <section id="metodologia">
 <h2>Metodología PRIORISK</h2>
-
 <div class="grid">
-<div class="card">
-<h3>Diagnóstico Estratégico</h3>
-<p>Identificación estructurada de amenazas, vulnerabilidades y exposición real del liderazgo y la organización.</p>
-</div>
-
-<div class="card">
-<h3>Análisis Multidimensional</h3>
-<p>Evaluación integrada de riesgo físico, reputacional, operacional y contextual.</p>
-</div>
-
-<div class="card">
-<h3>Diseño de Escenarios</h3>
-<p>Construcción de escenarios críticos y definición de estrategias de mitigación priorizadas.</p>
-</div>
-
-<div class="card">
-<h3>Implementación y Acompañamiento</h3>
-<p>Ejecución de medidas, protocolos y seguimiento estratégico continuo.</p>
-</div>
+<div class="card"><h3>Diagnóstico Estratégico</h3><p>Identificación estructurada de amenazas y vulnerabilidades.</p></div>
+<div class="card"><h3>Análisis Multidimensional</h3><p>Evaluación integrada de riesgos físicos, reputacionales y operativos.</p></div>
+<div class="card"><h3>Diseño de Escenarios</h3><p>Construcción de escenarios críticos y planes de mitigación.</p></div>
+<div class="card"><h3>Implementación</h3><p>Ejecución y acompañamiento estratégico.</p></div>
 </div>
 </section>
 
-<section id="contacto" class="cta">
+<section id="contacto">
 <h2>Solicitud de Evaluación Estratégica</h2>
 
-<form>
+<form action="mailto:priorisk.consulting@gmail.com" method="POST" enctype="text/plain">
 <label>Nombre y cargo</label>
-<input type="text" placeholder="Ej. Director de Operaciones">
+<input type="text" name="Nombre y cargo" required>
 
 <label>Organización</label>
-<input type="text" placeholder="Nombre de la empresa">
+<input type="text" name="Organización" required>
 
 <label>Tipo de riesgo prioritario</label>
-<select>
+<select name="Riesgo prioritario">
 <option>Riesgo físico</option>
 <option>Riesgo reputacional</option>
 <option>Riesgo operacional</option>
@@ -366,23 +237,19 @@ y líderes con alta exposición operativa, reputacional y física.
 </select>
 
 <label>Mensaje confidencial</label>
-<textarea placeholder="Describa brevemente el contexto o necesidad"></textarea>
+<textarea name="Mensaje" required></textarea>
 
-<button class="btn btn-primary" type="submit">Enviar solicitud</button>
+<button class="btn" type="submit">Enviar solicitud</button>
 </form>
 
 <p style="margin-top:40px;color:var(--gray);">
-📩 priorisk@gmail.com &nbsp; | &nbsp; 📞 +57 321 905 7059
+📩 priorisk.consulting@gmail.com &nbsp; | &nbsp; 📞 +57 321 905 7059
 </p>
 </section>
 
 <footer>
 © 2026 PRIORISK — Colombia
 </footer>
-
-<a class="whatsapp" href="https://wa.me/573219057059" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
 
 </body>
 </html>
