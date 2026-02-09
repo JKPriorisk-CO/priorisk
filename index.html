@@ -103,8 +103,6 @@ border-radius:50%;
 background:rgba(11,13,16,0.35);
 box-shadow:0 0 40px rgba(0,0,0,0.7), 0 0 90px rgba(0,0,0,0.5);
 backdrop-filter: blur(3px);
-opacity:0;
-animation:fadeIn 1.5s ease forwards;
 }
 
 .hero h1{
@@ -112,17 +110,11 @@ font-size:3.6rem;
 letter-spacing:2px;
 margin-bottom:30px;
 font-weight:700;
-opacity:0;
-animation:fadeIn 1.5s ease forwards;
-animation-delay:0.3s;
 }
 
 .hero p{
-max-width:900px;
-font-size:1.3rem;
-opacity:0;
-animation:fadeIn 1.5s ease forwards;
-animation-delay:0.6s;
+max-width:950px;
+font-size:1.35rem;
 }
 
 /* SECCIONES */
@@ -209,37 +201,27 @@ padding:50px 20px;
 color:var(--gray);
 }
 
-/* ANIMACIONES */
-@keyframes fadeIn{to{opacity:1;}}
-
-/* ========================= */
-/* RESPONSIVE – CAMBIO CLAVE */
-/* ========================= */
+/* RESPONSIVE */
 @media(max-width:900px){
-
 header{
 flex-direction:column;
 align-items:flex-start;
 padding:22px;
 }
-
 header img{
 height:120px;
 margin-bottom:20px;
 }
-
 nav{
 flex-direction:column;
 width:100%;
 }
-
 nav a{
 margin:10px 0;
 padding:8px 0;
 border-bottom:1px solid #2A2F3A;
 width:100%;
 }
-
 .hero-logo{width:420px;}
 .hero h1{font-size:2.6rem;}
 .hero p{font-size:1.15rem;}
@@ -271,9 +253,9 @@ section h2{font-size:1.9rem;}
 <section class="hero">
 <div class="hero-content">
 <img src="logo-escudo1.png" class="hero-logo" alt="PRIORISK Escudo">
-<h1>INTELIGENCIA Y GESTIÓN DEL RIESGO EJECUTIVO</h1>
+<h1>INTELIGENCIA ESTRATÉGICA PARA ENTORNOS DE ALTA EXPOSICIÓN</h1>
 <p>
-Consultoría especializada en análisis estratégico del riesgo, protección ejecutiva y toma de decisiones en contextos de alta exposición.
+PRIORISK acompaña a la alta dirección y organizaciones críticas en la comprensión, anticipación y gestión del riesgo ejecutivo, combinando análisis estratégico, inteligencia contextual y criterio operativo.
 </p>
 </div>
 </section>
@@ -282,7 +264,10 @@ Consultoría especializada en análisis estratégico del riesgo, protección eje
 <h2>Quiénes Somos</h2>
 <div class="block">
 <p>
-PRIORISK es una firma especializada en inteligencia estratégica y gestión del riesgo ejecutivo, orientada a apoyar a la alta dirección y organizaciones críticas en escenarios complejos y sensibles.
+PRIORISK es una firma especializada en inteligencia estratégica aplicada al riesgo ejecutivo. Trabajamos con líderes, directivos y organizaciones que operan en contextos de alta exposición, donde las decisiones no admiten improvisación y el error tiene consecuencias reales.
+</p>
+<p>
+Nuestro trabajo se orienta a comprender el entorno, identificar vulnerabilidades críticas y traducir información compleja en criterios claros para la toma de decisiones estratégicas.
 </p>
 </div>
 </section>
@@ -291,7 +276,10 @@ PRIORISK es una firma especializada en inteligencia estratégica y gestión del 
 <h2>Enfoque</h2>
 <div class="block">
 <p>
-Integramos análisis multidimensional del riesgo, evaluación de exposición y lectura estratégica del entorno para anticipar amenazas y reducir vulnerabilidades.
+Abordamos el riesgo como un fenómeno multidimensional. No nos limitamos a la protección física, sino que integramos variables estratégicas, operativas, reputacionales y contextuales para ofrecer una lectura completa del escenario.
+</p>
+<p>
+Nuestro enfoque prioriza la anticipación, la reducción de incertidumbre y la protección del capital humano crítico, alineando seguridad y estrategia empresarial.
 </p>
 </div>
 </section>
@@ -300,7 +288,10 @@ Integramos análisis multidimensional del riesgo, evaluación de exposición y l
 <h2>Metodología</h2>
 <div class="block">
 <p>
-Nuestra metodología se basa en diagnóstico estratégico, análisis de escenarios y recomendaciones accionables adaptadas a cada contexto específico.
+La metodología PRIORISK se estructura en tres fases: diagnóstico estratégico del entorno y del perfil de exposición, análisis de escenarios y formulación de recomendaciones accionables.
+</p>
+<p>
+Cada evaluación es diseñada a medida, considerando el contexto específico del cliente, su nivel de exposición y sus objetivos estratégicos, evitando soluciones genéricas o estandarizadas.
 </p>
 </div>
 </section>
@@ -319,7 +310,7 @@ Nuestra metodología se basa en diagnóstico estratégico, análisis de escenari
 <option>Organización / Proyecto sensible</option>
 </select>
 
-<label>Descripción confidencial</label>
+<label>Descripción confidencial del contexto</label>
 <textarea required></textarea>
 
 <button class="btn" type="submit">Solicitar evaluación</button>
