@@ -1,343 +1,282 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRIORISK | Consultoría Estratégica en Protección Ejecutiva</title>
+  <meta name="description" content="Consultoría estratégica en protección ejecutiva, inteligencia aplicada y evaluación de riesgos para empresas y alta dirección.">
 
-<title>PRIORISK | Inteligencia Estratégica y Riesgo Ejecutivo</title>
-<meta name="description" content="Firma especializada en inteligencia estratégica y análisis del riesgo ejecutivo para alta dirección y organizaciones críticas.">
-<link rel="canonical" href="https://jkpriorisk-co.github.io/priorisk/">
+  <style>
+    :root {
+      --black: #0b0b0b;
+      --dark-gray: #1a1a1a;
+      --gray: #3a3a3a;
+      --silver: #bfc3c6;
+      --gold: #c9a44c;
+      --amber: #e0b65c;
+      --white: #f5f5f5;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    }
 
-<style>
-:root{
---black:#0B0D10;
---dark:#141821;
---gray:#B5B8C2;
---gold:#C9A24D;
---gold-soft:#E0C878;
-}
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      line-height: 1.7;
+    }
 
-*{box-sizing:border-box;}
+    /* ===== HEADER ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.85);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:var(--black);
-color:#F5F6F8;
-}
+    header img {
+      height: 70px;
+    }
 
-/* ================= TEXTO ================= */
-section h2{
-text-transform:uppercase;
-text-align:center;
-font-size:2.3rem;
-margin-bottom:60px;
-letter-spacing:1.3px;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
 
-section p{
-text-align:justify;
-line-height:1.75;
-color:var(--gray);
-font-size:1.1rem;
-}
+    nav a {
+      color: var(--silver);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
 
-/* ================= HEADER ================= */
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:26px 60px;
-background:rgba(11,13,16,0.97);
-border-bottom:1px solid #2A2F3A;
-position:sticky;
-top:0;
-z-index:1000;
-}
+    nav a:hover {
+      color: var(--gold);
+    }
 
-header img{height:130px;}
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 90vh;
+      background: linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.85)
+      ),
+      url("fondo-hero.png") center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
 
-nav{display:flex;}
+    .hero img {
+      width: 220px;
+      margin-bottom: 25px;
+      border-radius: 50%;
+      box-shadow: 0 0 60px rgba(201,164,76,0.35);
+    }
 
-nav a{
-margin-left:34px;
-text-decoration:none;
-font-weight:600;
-color:var(--gray);
-letter-spacing:0.6px;
-}
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--amber);
+    }
 
-nav a:hover{color:var(--gold-soft);}
+    .hero p {
+      max-width: 900px;
+      text-align: justify;
+      font-size: 1.05rem;
+      color: var(--silver);
+    }
 
-/* ================= HERO ================= */
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:40px 20px;
-background:
-linear-gradient(rgba(11,13,16,0.75), rgba(11,13,16,0.9)),
-url("fondo-hero.png") center/cover no-repeat;
-}
+    section {
+      padding: 90px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.hero-content{
-max-width:1200px;
-display:flex;
-flex-direction:column;
-align-items:center;
-}
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
 
-.hero-logo{
-width:580px;
-margin-bottom:60px;
-padding:30px;
-border-radius:50%;
-background:rgba(11,13,16,0.35);
-box-shadow:0 0 40px rgba(0,0,0,0.7);
-backdrop-filter: blur(3px);
-}
+    section p {
+      text-align: justify;
+      color: var(--silver);
+      margin-bottom: 20px;
+    }
 
-.hero h1{
-font-size:3.6rem;
-letter-spacing:2px;
-margin-bottom:30px;
-font-weight:700;
-}
+    /* ===== FORMULARIO ===== */
+    form {
+      background: var(--dark-gray);
+      padding: 40px;
+      border-radius: 10px;
+    }
 
-.hero p{
-max-width:950px;
-font-size:1.35rem;
-}
+    form input, form textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 12px;
+      background: #111;
+      border: 1px solid #333;
+      color: var(--white);
+    }
 
-/* ================= SECCIONES ================= */
-section{
-padding:110px 20px;
-max-width:1200px;
-margin:auto;
-}
+    form button {
+      background: var(--gold);
+      color: #000;
+      padding: 12px 30px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-.block{
-background:linear-gradient(135deg,#11151F,#0B0D10);
-border:1px solid #2A2F3A;
-border-radius:8px;
-padding:70px;
-}
+    /* ===== WHATSAPP ===== */
+    .whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 22px;
+      text-decoration: none;
+      z-index: 2000;
+    }
 
-/* ================= CRITERIO ================= */
-.criteria{
-max-width:900px;
-margin:0 auto 60px;
-font-size:1.05rem;
-color:var(--gray);
-text-align:justify;
-}
+    /* ===== FOOTER ===== */
+    footer {
+      background: #000;
+      padding: 40px;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
 
-/* ================= FORM ================= */
-form{
-max-width:760px;
-margin:0 auto;
-background:var(--dark);
-padding:55px;
-border-radius:8px;
-border:1px solid #2A2F3A;
-}
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
 
-form label{
-display:block;
-margin-bottom:6px;
-color:var(--gray);
-font-size:0.85rem;
-text-transform:uppercase;
-letter-spacing:0.6px;
-}
+    .contact-info span {
+      white-space: nowrap;
+      color: var(--silver);
+      font-weight: 600;
+    }
 
-form input,
-form textarea,
-form select{
-width:100%;
-padding:14px;
-margin-bottom:26px;
-border-radius:4px;
-border:1px solid #2A2F3A;
-background:#0B0D10;
-color:#F5F6F8;
-}
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
 
-.btn{
-padding:18px 44px;
-border-radius:6px;
-border:none;
-font-weight:600;
-cursor:pointer;
-font-size:1.05rem;
-background:var(--gold);
-color:var(--black);
-}
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
 
-.btn:hover{background:var(--gold-soft);}
+      .hero h1 {
+        font-size: 2.1rem;
+      }
 
-/* ================= WHATSAPP ================= */
-.whatsapp-float{
-position:fixed;
-bottom:26px;
-right:26px;
-width:54px;
-height:54px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 6px 18px rgba(0,0,0,0.4);
-z-index:2000;
-}
+      .hero img {
+        width: 180px;
+      }
 
-.whatsapp-float img{width:28px;}
-
-/* ================= FOOTER ================= */
-footer{
-border-top:1px solid #2A2F3A;
-text-align:center;
-padding:50px 20px;
-color:var(--gray);
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:900px){
-header{
-flex-direction:column;
-align-items:flex-start;
-padding:22px;
-}
-header img{
-height:120px;
-margin-bottom:20px;
-}
-nav{
-flex-direction:column;
-width:100%;
-}
-nav a{
-margin:10px 0;
-padding:8px 0;
-border-bottom:1px solid #2A2F3A;
-width:100%;
-}
-.hero-logo{width:420px;}
-.hero h1{font-size:2.6rem;}
-.hero p{font-size:1.15rem;}
-section{padding:90px 20px;}
-.block{padding:45px;}
-}
-
-@media(max-width:480px){
-.hero-logo{width:340px;}
-.hero h1{font-size:2.1rem;}
-section h2{font-size:1.9rem;}
-}
-</style>
+      .contact-info {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<img src="logo1.png" alt="PRIORISK">
-<nav>
-<a href="#">Inicio</a>
-<a href="#quienes">Quiénes Somos</a>
-<a href="#enfoque">Enfoque</a>
-<a href="#metodologia">Metodología</a>
-<a href="#evaluacion">Evaluación</a>
-</nav>
+  <img src="logo1.png" alt="PRIORISK Logo">
+  <nav>
+    <ul>
+      <li><a href="#inicio">INICIO</a></li>
+      <li><a href="#quienes">QUIÉNES SOMOS</a></li>
+      <li><a href="#enfoque">ENFOQUE</a></li>
+      <li><a href="#metodologia">METODOLOGÍA</a></li>
+      <li><a href="#evaluacion">EVALUACIÓN</a></li>
+      <li><a href="#contacto">CONTACTO</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="hero">
-<div class="hero-content">
-<img src="logo-escudo1.png" class="hero-logo" alt="PRIORISK Escudo">
-<h1>INTELIGENCIA ESTRATÉGICA PARA ENTORNOS DE ALTA EXPOSICIÓN</h1>
-<p>
-Acompañamos a la alta dirección y organizaciones críticas en la comprensión y gestión del riesgo ejecutivo, aportando criterio estratégico en contextos donde la improvisación no es una opción.
-</p>
-</div>
+<section class="hero" id="inicio">
+  <img src="logo-escudo1.png" alt="Escudo PRIORISK">
+  <h1>INTELIGENCIA ESTRATÉGICA APLICADA A LA PROTECCIÓN EJECUTIVA</h1>
+  <p>
+    PRIORISK es una firma de consultoría estratégica especializada en protección ejecutiva,
+    análisis multidimensional del riesgo y toma de decisiones críticas en entornos corporativos
+    complejos. Operamos bajo estándares de confidencialidad, criterio técnico y visión ejecutiva.
+  </p>
 </section>
 
 <section id="quienes">
-<h2>Quiénes Somos</h2>
-<div class="block">
-<p>
-PRIORISK es una firma especializada en inteligencia estratégica aplicada al riesgo ejecutivo. Trabajamos con líderes, directivos y organizaciones que operan en contextos de alta exposición, donde el error tiene consecuencias reales.
-</p>
-<p>
-Nuestro valor reside en traducir información compleja en criterio claro para la toma de decisiones estratégicas.
-</p>
-</div>
+  <h2>QUIÉNES SOMOS</h2>
+  <p>PRIORISK actúa como socio estratégico de empresas, ingenieros y alta dirección...</p>
 </section>
 
 <section id="enfoque">
-<h2>Enfoque</h2>
-<div class="block">
-<p>
-Abordamos el riesgo como un fenómeno multidimensional, integrando variables estratégicas, operativas, reputacionales y contextuales para ofrecer una lectura completa del escenario.
-</p>
-</div>
+  <h2>ENFOQUE</h2>
+  <p>Nuestro enfoque integra inteligencia estratégica, análisis técnico-operativo y contexto corporativo...</p>
 </section>
 
 <section id="metodologia">
-<h2>Metodología</h2>
-<div class="block">
-<p>
-Nuestra metodología se estructura en diagnóstico estratégico, análisis de escenarios y formulación de recomendaciones accionables, siempre adaptadas al contexto específico del cliente.
-</p>
-</div>
+  <h2>METODOLOGÍA</h2>
+  <p>Aplicamos una metodología estructurada basada en evaluación, priorización, diseño e implementación...</p>
 </section>
 
 <section id="evaluacion">
-<h2>Evaluación Estratégica Inicial de Riesgo</h2>
+  <h2>EVALUACIÓN ESTRATÉGICA INICIAL</h2>
+  <p>
+    La evaluación estratégica inicial permite identificar riesgos críticos, brechas operativas
+    y escenarios de exposición. Se ejecuta bajo un esquema 50% al inicio y 50% contra entrega
+    del informe ejecutivo.
+  </p>
+</section>
 
-<div class="criteria">
-<p>
-Proceso confidencial orientado a identificar niveles de exposición, variables críticas y cursos de acción estratégicos para la alta dirección y organizaciones sensibles.
-</p>
-<p>
-La evaluación se desarrolla bajo un esquema profesional de compromiso mutuo, con una modalidad 50 % al inicio y 50 % a la entrega.
-</p>
-</div>
-
-<form action="mailto:priorisk.consulting@gmail.com" method="POST" enctype="text/plain">
-<label>Nombre, cargo y organización</label>
-<input type="text" required>
-
-<label>Contexto de exposición</label>
-<select required>
-<option>Alta dirección / Junta</option>
-<option>Ejecutivo con responsabilidad crítica</option>
-<option>Organización / Proyecto sensible</option>
-</select>
-
-<label>Descripción confidencial del contexto</label>
-<textarea required></textarea>
-
-<button class="btn" type="submit">Solicitar evaluación estratégica</button>
-</form>
-
-<p style="text-align:center;margin-top:40px;">
-📩 priorisk.consulting@gmail.com &nbsp; | &nbsp; 📞 +57 321 905 7059
-</p>
+<section id="contacto">
+  <h2>CONTACTO</h2>
+  <form>
+    <input type="text" placeholder="Nombre y cargo">
+    <input type="email" placeholder="Correo corporativo">
+    <textarea placeholder="Contexto de la consulta"></textarea>
+    <button type="submit">SOLICITAR CONTACTO CONFIDENCIAL</button>
+  </form>
 </section>
 
 <footer>
-© 2026 PRIORISK — Colombia
+  <div class="contact-info">
+    <span>📧 priorisk.consulting@gmail.com</span>
+    <span>📞 +57 300 000 0000</span>
+  </div>
 </footer>
 
-<a class="whatsapp-float"
-href="https://wa.me/573219057059?text=Buen%20día.%20Deseo%20solicitar%20una%20evaluación%20estratégica%20inicial%20de%20riesgo%20en%20un%20contexto%20de%20alta%20exposición."
-target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-</a>
+<a class="whatsapp" href="https://wa.me/573000000000" target="_blank">💬</a>
 
 </body>
 </html>
