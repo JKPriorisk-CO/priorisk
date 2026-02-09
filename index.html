@@ -5,14 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>PRIORISK | Inteligencia y Gestión del Riesgo Ejecutivo</title>
-
 <meta name="description" content="Firma de consultoría especializada en inteligencia estratégica, análisis multidimensional del riesgo y protección ejecutiva para alta dirección.">
 
 <link rel="canonical" href="https://jkpriorisk-co.github.io/priorisk/">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- SCHEMA.ORG -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -21,10 +18,7 @@
   "url": "https://jkpriorisk-co.github.io/priorisk/",
   "logo": "https://jkpriorisk-co.github.io/priorisk/logo1.png",
   "description": "Firma de consultoría especializada en inteligencia estratégica y gestión del riesgo ejecutivo.",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Colombia"
-  },
+  "areaServed": { "@type": "Country", "name": "Colombia" },
   "serviceType": [
     "Análisis estratégico del riesgo",
     "Protección ejecutiva",
@@ -69,7 +63,7 @@ top:0;
 z-index:1000;
 }
 
-header img{height:150px;}
+header img{height:140px;}
 
 nav a{
 margin-left:34px;
@@ -103,26 +97,37 @@ align-items:center;
 z-index:2;
 }
 
+/* ESCUDO DIFUMINADO */
 .hero-logo{
-width:600px;
+width:620px;
 margin-bottom:65px;
 opacity:0;
-transform:scale(0.94);
+transform:scale(0.95);
 animation:logoFade 1.6s ease-out forwards;
+
+/* DIFUMINADO PREMIUM */
+background:rgba(11,13,16,0.35);
+padding:26px;
+border-radius:18px;
+box-shadow:
+0 0 35px rgba(0,0,0,0.65),
+0 0 70px rgba(0,0,0,0.45);
+backdrop-filter: blur(2px);
 }
 
 .hero h1{
-font-size:3.7rem;
-letter-spacing:1.7px;
+font-size:3.9rem;
+letter-spacing:2px;
 margin-bottom:30px;
+font-weight:700;
 opacity:0;
 animation:titleFade 1.4s ease-out forwards;
 animation-delay:0.3s;
 }
 
 .hero p{
-max-width:900px;
-font-size:1.32rem;
+max-width:920px;
+font-size:1.34rem;
 line-height:1.65;
 color:var(--gray);
 opacity:0;
@@ -280,13 +285,13 @@ Nuestro trabajo se dirige a juntas directivas, alta gerencia y profesionales con
 
 <form action="mailto:priorisk.consulting@gmail.com" method="POST" enctype="text/plain">
 <label>Nombre y cargo</label>
-<input type="text" name="Nombre y cargo" required>
+<input type="text" required>
 
 <label>Organización</label>
-<input type="text" name="Organización" required>
+<input type="text" required>
 
 <label>Tipo de riesgo prioritario</label>
-<select name="Riesgo prioritario">
+<select>
 <option>Riesgo físico</option>
 <option>Riesgo reputacional</option>
 <option>Riesgo operacional</option>
@@ -294,7 +299,7 @@ Nuestro trabajo se dirige a juntas directivas, alta gerencia y profesionales con
 </select>
 
 <label>Mensaje confidencial</label>
-<textarea name="Mensaje" required></textarea>
+<textarea required></textarea>
 
 <button class="btn" type="submit">Enviar solicitud</button>
 </form>
