@@ -145,7 +145,22 @@ margin-bottom:65px;
 font-size:2.4rem;
 }
 
-/* FORMULARIO CONVERSIÓN */
+/* QUIÉNES SOMOS */
+.about{
+background:linear-gradient(135deg,#11151F,#0B0D10);
+border:1px solid #2A2F3A;
+border-radius:8px;
+padding:70px;
+}
+
+.about p{
+font-size:1.15rem;
+line-height:1.7;
+color:var(--gray);
+margin-bottom:24px;
+}
+
+/* FORMULARIO */
 form{
 max-width:760px;
 margin:60px auto 0;
@@ -198,6 +213,27 @@ color:var(--gray);
 text-align:center;
 }
 
+/* WHATSAPP */
+.whatsapp-float{
+position:fixed;
+bottom:26px;
+right:26px;
+width:54px;
+height:54px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 6px 18px rgba(0,0,0,0.4);
+z-index:2000;
+}
+
+.whatsapp-float img{
+width:28px;
+height:28px;
+}
+
 /* FOOTER */
 footer{
 background:var(--black);
@@ -221,6 +257,7 @@ color:var(--gray);
 <img src="logo1.png" alt="PRIORISK">
 <nav>
 <a href="#">Inicio</a>
+<a href="#about">Quiénes Somos</a>
 <a href="#contacto">Evaluación</a>
 </nav>
 </header>
@@ -235,11 +272,25 @@ Consultoría especializada en análisis estratégico del riesgo y protección ej
 </div>
 </section>
 
+<section id="about">
+<h2>Quiénes Somos</h2>
+<div class="about">
+<p>
+PRIORISK es una firma de consultoría especializada en inteligencia estratégica y gestión del riesgo ejecutivo, orientada a apoyar la toma de decisiones en contextos de alta exposición, complejidad e incertidumbre.
+</p>
+<p>
+Nuestro enfoque integra análisis multidimensional del riesgo, evaluación de escenarios críticos y acompañamiento estratégico, con el objetivo de proteger personas, continuidad operativa y reputación organizacional.
+</p>
+<p>
+Trabajamos con alta dirección, juntas directivas, ejecutivos y organizaciones que requieren criterio, confidencialidad y rigor analítico en situaciones donde el margen de error es mínimo.
+</p>
+</div>
+</section>
+
 <section id="contacto">
 <h2>Solicitud de Evaluación Estratégica</h2>
 
 <form action="mailto:priorisk.consulting@gmail.com" method="POST" enctype="text/plain">
-
 <label>Nombre, cargo y organización</label>
 <input type="text" required>
 
@@ -266,7 +317,6 @@ Consultoría especializada en análisis estratégico del riesgo y protección ej
 <p class="note">
 Toda la información es tratada con estricta confidencialidad.
 </p>
-
 </form>
 
 <p style="margin-top:40px;color:var(--gray);text-align:center;">
@@ -277,6 +327,13 @@ Toda la información es tratada con estricta confidencialidad.
 <footer>
 © 2026 PRIORISK — Colombia
 </footer>
+
+<!-- BOTÓN WHATSAPP -->
+<a class="whatsapp-float" 
+   href="https://wa.me/573219057059?text=Hola,%20quisiera%20solicitar%20una%20evaluación%20estratégica%20de%20riesgo."
+   target="_blank" aria-label="WhatsApp PRIORISK">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
 
 </body>
 </html>
