@@ -61,6 +61,10 @@ header img{
 height:130px;
 }
 
+nav{
+display:flex;
+}
+
 nav a{
 margin-left:34px;
 text-decoration:none;
@@ -208,56 +212,45 @@ color:var(--gray);
 /* ANIMACIONES */
 @keyframes fadeIn{to{opacity:1;}}
 
-/* RESPONSIVE */
+/* ========================= */
+/* RESPONSIVE – CAMBIO CLAVE */
+/* ========================= */
 @media(max-width:900px){
+
 header{
 flex-direction:column;
+align-items:flex-start;
 padding:22px;
 }
 
 header img{
 height:120px;
-margin-bottom:18px;
+margin-bottom:20px;
+}
+
+nav{
+flex-direction:column;
+width:100%;
 }
 
 nav a{
-margin:0 14px;
-display:inline-block;
+margin:10px 0;
+padding:8px 0;
+border-bottom:1px solid #2A2F3A;
+width:100%;
 }
 
-.hero-logo{
-width:420px;
-}
-
-.hero h1{
-font-size:2.6rem;
-}
-
-.hero p{
-font-size:1.15rem;
-}
-
-section{
-padding:90px 20px;
-}
-
-.block{
-padding:45px;
-}
+.hero-logo{width:420px;}
+.hero h1{font-size:2.6rem;}
+.hero p{font-size:1.15rem;}
+section{padding:90px 20px;}
+.block{padding:45px;}
 }
 
 @media(max-width:480px){
-.hero-logo{
-width:340px;
-}
-
-.hero h1{
-font-size:2.1rem;
-}
-
-section h2{
-font-size:1.9rem;
-}
+.hero-logo{width:340px;}
+.hero h1{font-size:2.1rem;}
+section h2{font-size:1.9rem;}
 }
 </style>
 </head>
