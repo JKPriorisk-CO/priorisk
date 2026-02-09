@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PRIORISK | Inteligencia y Gestión del Riesgo Ejecutivo</title>
-<meta name="description" content="Consultoría especializada en inteligencia estratégica, análisis del riesgo ejecutivo y protección para alta dirección.">
+<title>PRIORISK | Inteligencia Estratégica y Riesgo Ejecutivo</title>
+<meta name="description" content="Firma especializada en inteligencia estratégica, análisis del riesgo ejecutivo y protección para alta dirección y organizaciones críticas.">
+<link rel="canonical" href="https://jkpriorisk-co.github.io/priorisk/">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -27,20 +28,20 @@ background:var(--black);
 color:#F5F6F8;
 }
 
-/* REGLAS GLOBALES */
+/* TÍTULOS Y TEXTO */
 section h2{
 text-transform:uppercase;
 text-align:center;
-font-size:2.4rem;
-margin-bottom:65px;
-letter-spacing:1.4px;
+font-size:2.3rem;
+margin-bottom:60px;
+letter-spacing:1.3px;
 }
 
 section p{
 text-align:justify;
-line-height:1.7;
+line-height:1.75;
 color:var(--gray);
-font-size:1.12rem;
+font-size:1.1rem;
 }
 
 /* HEADER */
@@ -49,14 +50,16 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:26px 60px;
-background:rgba(11,13,16,0.96);
+background:rgba(11,13,16,0.97);
 border-bottom:1px solid #2A2F3A;
 position:sticky;
 top:0;
 z-index:1000;
 }
 
-header img{height:140px;}
+header img{
+height:130px;
+}
 
 nav a{
 margin-left:34px;
@@ -75,7 +78,6 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-position:relative;
 padding:40px 20px;
 background:
 linear-gradient(rgba(11,13,16,0.75), rgba(11,13,16,0.9)),
@@ -90,35 +92,33 @@ align-items:center;
 }
 
 .hero-logo{
-width:620px;
-margin-bottom:65px;
+width:580px;
+margin-bottom:60px;
 padding:30px;
 border-radius:50%;
 background:rgba(11,13,16,0.35);
-box-shadow:
-0 0 40px rgba(0,0,0,0.7),
-0 0 90px rgba(0,0,0,0.5);
+box-shadow:0 0 40px rgba(0,0,0,0.7), 0 0 90px rgba(0,0,0,0.5);
 backdrop-filter: blur(3px);
 opacity:0;
-animation:logoFade 1.6s ease-out forwards;
+animation:fadeIn 1.5s ease forwards;
 }
 
 .hero h1{
-font-size:3.8rem;
+font-size:3.6rem;
 letter-spacing:2px;
 margin-bottom:30px;
 font-weight:700;
 opacity:0;
-animation:titleFade 1.4s ease-out forwards;
+animation:fadeIn 1.5s ease forwards;
 animation-delay:0.3s;
 }
 
 .hero p{
-max-width:920px;
-font-size:1.34rem;
+max-width:900px;
+font-size:1.3rem;
 opacity:0;
-animation:textFade 1.4s ease-out forwards;
-animation-delay:0.7s;
+animation:fadeIn 1.5s ease forwards;
+animation-delay:0.6s;
 }
 
 /* SECCIONES */
@@ -128,7 +128,6 @@ max-width:1200px;
 margin:auto;
 }
 
-/* BLOQUES */
 .block{
 background:linear-gradient(135deg,#11151F,#0B0D10);
 border:1px solid #2A2F3A;
@@ -167,8 +166,6 @@ background:#0B0D10;
 color:#F5F6F8;
 }
 
-form textarea{min-height:130px;}
-
 .btn{
 padding:18px 44px;
 border-radius:6px;
@@ -198,9 +195,7 @@ box-shadow:0 6px 18px rgba(0,0,0,0.4);
 z-index:2000;
 }
 
-.whatsapp-float img{
-width:28px;
-}
+.whatsapp-float img{width:28px;}
 
 /* FOOTER */
 footer{
@@ -211,9 +206,59 @@ color:var(--gray);
 }
 
 /* ANIMACIONES */
-@keyframes logoFade{to{opacity:1;}}
-@keyframes titleFade{to{opacity:1;}}
-@keyframes textFade{to{opacity:1;}}
+@keyframes fadeIn{to{opacity:1;}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+header{
+flex-direction:column;
+padding:22px;
+}
+
+header img{
+height:120px;
+margin-bottom:18px;
+}
+
+nav a{
+margin:0 14px;
+display:inline-block;
+}
+
+.hero-logo{
+width:420px;
+}
+
+.hero h1{
+font-size:2.6rem;
+}
+
+.hero p{
+font-size:1.15rem;
+}
+
+section{
+padding:90px 20px;
+}
+
+.block{
+padding:45px;
+}
+}
+
+@media(max-width:480px){
+.hero-logo{
+width:340px;
+}
+
+.hero h1{
+font-size:2.1rem;
+}
+
+section h2{
+font-size:1.9rem;
+}
+}
 </style>
 </head>
 
@@ -235,7 +280,7 @@ color:var(--gray);
 <img src="logo-escudo1.png" class="hero-logo" alt="PRIORISK Escudo">
 <h1>INTELIGENCIA Y GESTIÓN DEL RIESGO EJECUTIVO</h1>
 <p>
-Consultoría especializada en análisis estratégico del riesgo y protección ejecutiva para contextos de alta exposición.
+Consultoría especializada en análisis estratégico del riesgo, protección ejecutiva y toma de decisiones en contextos de alta exposición.
 </p>
 </div>
 </section>
@@ -244,10 +289,7 @@ Consultoría especializada en análisis estratégico del riesgo y protección ej
 <h2>Quiénes Somos</h2>
 <div class="block">
 <p>
-PRIORISK es una firma de consultoría especializada en inteligencia estratégica y gestión del riesgo ejecutivo, orientada a apoyar la toma de decisiones en contextos de alta exposición, complejidad e incertidumbre.
-</p>
-<p>
-Integramos análisis multidimensional del riesgo, evaluación de escenarios críticos y acompañamiento estratégico para proteger personas, continuidad operativa y reputación organizacional.
+PRIORISK es una firma especializada en inteligencia estratégica y gestión del riesgo ejecutivo, orientada a apoyar a la alta dirección y organizaciones críticas en escenarios complejos y sensibles.
 </p>
 </div>
 </section>
@@ -256,7 +298,7 @@ Integramos análisis multidimensional del riesgo, evaluación de escenarios crí
 <h2>Enfoque</h2>
 <div class="block">
 <p>
-Nuestro enfoque parte de la inteligencia aplicada al riesgo. Analizamos variables humanas, operativas, contextuales y reputacionales para construir una visión integral que permita anticipar escenarios y reducir vulnerabilidades críticas.
+Integramos análisis multidimensional del riesgo, evaluación de exposición y lectura estratégica del entorno para anticipar amenazas y reducir vulnerabilidades.
 </p>
 </div>
 </section>
@@ -265,10 +307,7 @@ Nuestro enfoque parte de la inteligencia aplicada al riesgo. Analizamos variable
 <h2>Metodología</h2>
 <div class="block">
 <p>
-La metodología PRIORISK combina diagnóstico estratégico, análisis de exposición, evaluación de escenarios y recomendaciones accionables, adaptadas a cada contexto y nivel de criticidad.
-</p>
-<p>
-No aplicamos modelos genéricos. Cada evaluación responde a la realidad específica del cliente, su entorno y sus responsabilidades.
+Nuestra metodología se basa en diagnóstico estratégico, análisis de escenarios y recomendaciones accionables adaptadas a cada contexto específico.
 </p>
 </div>
 </section>
@@ -293,7 +332,7 @@ No aplicamos modelos genéricos. Cada evaluación responde a la realidad especí
 <button class="btn" type="submit">Solicitar evaluación</button>
 </form>
 
-<p style="text-align:center;margin-top:40px;color:var(--gray);">
+<p style="text-align:center;margin-top:40px;">
 📩 priorisk.consulting@gmail.com &nbsp; | &nbsp; 📞 +57 321 905 7059
 </p>
 </section>
@@ -302,7 +341,7 @@ No aplicamos modelos genéricos. Cada evaluación responde a la realidad especí
 © 2026 PRIORISK — Colombia
 </footer>
 
-<a class="whatsapp-float" 
+<a class="whatsapp-float"
 href="https://wa.me/573219057059?text=Hola,%20quisiera%20solicitar%20una%20evaluación%20estratégica%20de%20riesgo."
 target="_blank">
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
