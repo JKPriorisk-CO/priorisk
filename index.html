@@ -97,15 +97,12 @@ align-items:center;
 z-index:2;
 }
 
-/* ESCUDO DIFUMINADO */
 .hero-logo{
 width:620px;
 margin-bottom:65px;
 opacity:0;
 transform:scale(0.95);
 animation:logoFade 1.6s ease-out forwards;
-
-/* DIFUMINADO PREMIUM */
 background:rgba(11,13,16,0.35);
 padding:26px;
 border-radius:18px;
@@ -148,42 +145,12 @@ margin-bottom:65px;
 font-size:2.4rem;
 }
 
-/* ENFOQUE */
-.enfoque{
-background:linear-gradient(135deg,#11151F,#0B0D10);
-border:1px solid #2A2F3A;
-border-radius:8px;
-padding:60px;
-}
-
-.enfoque p{
-font-size:1.15rem;
-line-height:1.65;
-color:var(--gray);
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:40px;
-}
-
-.card{
-background:var(--dark);
-padding:40px;
-border-radius:8px;
-border:1px solid #2A2F3A;
-}
-
-.card h3{color:var(--gold-soft);}
-
-/* FORMULARIO */
+/* FORMULARIO CONVERSIÓN */
 form{
-max-width:720px;
+max-width:760px;
 margin:60px auto 0;
 background:var(--dark);
-padding:45px;
+padding:55px;
 border-radius:8px;
 border:1px solid #2A2F3A;
 }
@@ -192,7 +159,9 @@ form label{
 display:block;
 margin-bottom:6px;
 color:var(--gray);
-font-size:0.9rem;
+font-size:0.85rem;
+text-transform:uppercase;
+letter-spacing:0.6px;
 }
 
 form input,
@@ -200,17 +169,17 @@ form textarea,
 form select{
 width:100%;
 padding:14px;
-margin-bottom:22px;
+margin-bottom:26px;
 border-radius:4px;
 border:1px solid #2A2F3A;
 background:#0B0D10;
 color:#F5F6F8;
 }
 
-form textarea{min-height:120px;}
+form textarea{min-height:130px;}
 
 .btn{
-padding:18px 40px;
+padding:18px 44px;
 border-radius:6px;
 border:none;
 font-weight:600;
@@ -222,6 +191,14 @@ color:var(--black);
 
 .btn:hover{background:var(--gold-soft);}
 
+.note{
+margin-top:26px;
+font-size:0.9rem;
+color:var(--gray);
+text-align:center;
+}
+
+/* FOOTER */
 footer{
 background:var(--black);
 border-top:1px solid #2A2F3A;
@@ -244,9 +221,7 @@ color:var(--gray);
 <img src="logo1.png" alt="PRIORISK">
 <nav>
 <a href="#">Inicio</a>
-<a href="#enfoque">Enfoque</a>
-<a href="#metodologia">Metodología</a>
-<a href="#contacto">Contacto</a>
+<a href="#contacto">Evaluación</a>
 </nav>
 </header>
 
@@ -255,28 +230,8 @@ color:var(--gray);
 <img src="logo-escudo1.png" class="hero-logo" alt="PRIORISK Escudo">
 <h1>INTELIGENCIA Y GESTIÓN DEL RIESGO EJECUTIVO</h1>
 <p>
-Firma de consultoría especializada en análisis estratégico del riesgo, inteligencia aplicada y protección ejecutiva para organizaciones y líderes con alta exposición.
+Consultoría especializada en análisis estratégico del riesgo y protección ejecutiva para contextos de alta exposición.
 </p>
-</div>
-</section>
-
-<section id="enfoque">
-<h2>Criterio y Alcance</h2>
-<div class="enfoque">
-<p>
-PRIORISK asesora procesos de toma de decisión en contextos de alta exposición, incertidumbre y riesgo crítico.  
-Nuestro trabajo se dirige a juntas directivas, alta gerencia y profesionales con responsabilidades estratégicas, donde el error tiene impacto humano, reputacional u operativo significativo.
-</p>
-</div>
-</section>
-
-<section id="metodologia">
-<h2>Metodología PRIORISK</h2>
-<div class="grid">
-<div class="card"><h3>Diagnóstico Estratégico</h3><p>Identificación estructurada de amenazas, vulnerabilidades y exposición real.</p></div>
-<div class="card"><h3>Análisis Multidimensional</h3><p>Evaluación integrada de riesgos físicos, reputacionales y operativos.</p></div>
-<div class="card"><h3>Diseño de Escenarios Críticos</h3><p>Construcción de escenarios plausibles y planes de mitigación.</p></div>
-<div class="card"><h3>Implementación</h3><p>Acompañamiento estratégico en la ejecución.</p></div>
 </div>
 </section>
 
@@ -284,27 +239,37 @@ Nuestro trabajo se dirige a juntas directivas, alta gerencia y profesionales con
 <h2>Solicitud de Evaluación Estratégica</h2>
 
 <form action="mailto:priorisk.consulting@gmail.com" method="POST" enctype="text/plain">
-<label>Nombre y cargo</label>
+
+<label>Nombre, cargo y organización</label>
 <input type="text" required>
 
-<label>Organización</label>
-<input type="text" required>
-
-<label>Tipo de riesgo prioritario</label>
-<select>
-<option>Riesgo físico</option>
-<option>Riesgo reputacional</option>
-<option>Riesgo operacional</option>
-<option>Análisis integral</option>
+<label>Contexto de exposición</label>
+<select required>
+<option>Alta dirección / Junta</option>
+<option>Ejecutivo con responsabilidad crítica</option>
+<option>Profesional de alto perfil</option>
+<option>Organización / Proyecto sensible</option>
 </select>
 
-<label>Mensaje confidencial</label>
+<label>Nivel de urgencia</label>
+<select required>
+<option>Evaluación preventiva</option>
+<option>Situación en desarrollo</option>
+<option>Riesgo inmediato</option>
+</select>
+
+<label>Descripción confidencial del contexto</label>
 <textarea required></textarea>
 
-<button class="btn" type="submit">Enviar solicitud</button>
+<button class="btn" type="submit">Solicitar evaluación</button>
+
+<p class="note">
+Toda la información es tratada con estricta confidencialidad.
+</p>
+
 </form>
 
-<p style="margin-top:40px;color:var(--gray);">
+<p style="margin-top:40px;color:var(--gray);text-align:center;">
 📩 priorisk.consulting@gmail.com &nbsp; | &nbsp; 📞 +57 321 905 7059
 </p>
 </section>
