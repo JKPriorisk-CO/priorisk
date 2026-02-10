@@ -3,279 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PRIORISK | Consultoría Estratégica en Riesgo Ejecutivo</title>
-  <meta name="description" content="PRIORISK Consulting Group es una firma de consultoría estratégica en gestión integral del riesgo y protección ejecutiva basada en inteligencia estratégica y análisis multidimensional.">
-
+  <title>PRIORISK | Consultoría Estratégica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    :root {
-      --negro: #0b0b0b;
-      --gris-oscuro: #1a1a1a;
-      --gris-claro: #e6e6e6;
-      --dorado: #c9a24d;
-      --blanco: #ffffff;
+    :root{
+      --gold:#c9a24d;
+      --dark:#0b0b0b;
+      --gray:#e6e6e6;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
-
-    body {
-      background-color: var(--negro);
-      color: var(--blanco);
-      line-height: 1.7;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.9);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 40px;
-      z-index: 1000;
-    }
-
-    header img {
-      height: 55px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 22px;
-    }
-
-    nav ul li a {
-      color: var(--blanco);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      text-transform: uppercase;
-    }
-
-    nav ul li a:hover {
-      color: var(--dorado);
-    }
-
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-                  url("fondo-hero.png") center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .hero-logo {
-      width: 260px;
-      margin-bottom: 25px;
-      background: rgba(0,0,0,0.45);
-      padding: 20px;
-      border-radius: 18px;
-      backdrop-filter: blur(6px);
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      color: var(--dorado);
-      font-size: 18px;
-      text-transform: uppercase;
-    }
-
-    section {
-      padding: 90px 12%;
-      background-color: var(--negro);
-    }
-
-    section:nth-child(even) {
-      background-color: var(--gris-oscuro);
-    }
-
-    section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: var(--dorado);
-      letter-spacing: 1px;
-    }
-
-    section p {
-      text-align: justify;
-      color: var(--gris-claro);
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .services {
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .service-item {
-      display: flex;
-      gap: 20px;
-      background: var(--gris-claro);
-      color: #000;
-      padding: 20px;
-      border-radius: 6px;
-      margin-bottom: 15px;
-      align-items: center;
-    }
-
-    .service-item img {
-      width: 48px;
-    }
-
-    footer {
-      background: #000;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    footer p {
-      color: var(--gris-claro);
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #25D366;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      z-index: 2000;
-    }
-
-    .whatsapp-float img {
-      width: 28px;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .hero h1 {
-        font-size: 30px;
-      }
-
-      .hero-logo {
-        width: 220px;
-      }
-
-      header {
-        flex-direction: column;
-      }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif;}
+    body{background:#fff;color:#111;line-height:1.6;}
+    header{position:fixed;top:0;width:100%;background:#000;z-index:1000;}
+    .nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;}
+    .nav img{height:46px;}
+    .menu a{color:#fff;text-decoration:none;margin-left:18px;font-size:14px;font-weight:500;}
+    .hero{margin-top:70px;min-height:90vh;background:url('hero.jpg') center/cover no-repeat;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;}
+    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.65);}    
+    .hero-content{position:relative;z-index:2;max-width:900px;padding:40px;}
+    .hero-logo{display:inline-block;padding:28px 40px;background:rgba(0,0,0,.55);border-radius:18px;backdrop-filter:blur(6px);}    
+    .hero-logo img{max-width:260px;display:block;margin:auto;}
+    .hero h1{margin-top:20px;color:var(--gold);font-size:18px;font-weight:700;letter-spacing:1px;}
+    section{max-width:1100px;margin:80px auto;padding:0 20px;}
+    h2{color:#000;font-size:30px;margin-bottom:20px;}
+    h2 span{color:var(--gold);}    
+    .box{background:#f2f2f2;padding:30px;border-left:6px solid var(--gold);}    
+    .services .item{display:flex;gap:18px;align-items:flex-start;background:#ededed;margin-bottom:16px;padding:18px;}
+    .services i{color:var(--gold);font-size:28px;min-width:32px;}    
+    .cta{background:#000;color:#fff;text-align:center;padding:60px 20px;}
+    .cta a{display:inline-block;margin-top:20px;background:var(--gold);color:#000;padding:14px 26px;font-weight:700;text-decoration:none;}    
+    footer{background:#0b0b0b;color:#fff;padding:40px 20px;text-align:center;}    
+    footer a{color:var(--gold);text-decoration:none;font-weight:600;}    
+    .whatsapp{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;z-index:2000;}    
+    @media(max-width:768px){
+      .menu{display:none;}
+      .hero-logo img{max-width:220px;}
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <img src="logo-escudo1.png" alt="PRIORISK Escudo">
-  <nav>
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#quienes">Quiénes Somos</a></li>
-      <li><a href="#enfoque">Enfoque</a></li>
-      <li><a href="#metodologia">Metodología</a></li>
-      <li><a href="#evaluacion">Evaluación</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+  <div class="nav">
+    <img src="escudo.png" alt="PRIORISK Escudo">
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#quienes">Quiénes somos</a>
+      <a href="#enfoque">Enfoque</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#evaluacion">Evaluación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero" id="inicio">
-  <img src="logo1.png" alt="PRIORISK" class="hero-logo">
-  <p>CONSULTORÍA ESTRATÉGICA EN RIESGO Y PROTECCIÓN EJECUTIVA</p>
-</section>
-
-<section id="quienes">
-  <h2>QUIÉNES SOMOS</h2>
-  <p>
-    PRIORISK Consulting Group es una firma de consultoría estratégica especializada en la gestión integral del riesgo ejecutivo,
-    basada en inteligencia estratégica, análisis multidimensional y evaluación avanzada de escenarios.
-  </p>
-</section>
-
-<section id="enfoque">
-  <h2>ENFOQUE</h2>
-  <p>
-    Nuestro enfoque integra análisis humano, operativo, territorial y decisional para anticipar amenazas,
-    reducir exposición y fortalecer la toma de decisiones en entornos complejos y de alta criticidad.
-  </p>
-</section>
-
-<section id="metodologia">
-  <h2>METODOLOGÍA</h2>
-  <p>
-    Aplicamos metodologías propias basadas en análisis de riesgo estructurado, matrices de exposición,
-    inteligencia contextual y diseño de esquemas de protección ejecutiva a la medida.
-  </p>
-</section>
-
-<section id="evaluacion">
-  <h2>EVALUACIÓN ESTRATÉGICA INICIAL</h2>
-  <p>
-    Proceso confidencial de diagnóstico inicial para determinar el nivel de riesgo, exposición y requerimientos
-    estratégicos. Modalidad de pago 50% al inicio y 50% a la entrega del informe.
-  </p>
-</section>
-
-<section>
-  <h2>SERVICIOS PRINCIPALES</h2>
-  <div class="services">
-    <div class="service-item">
-      <strong>Diagnóstico Estratégico de Riesgo Ejecutivo</strong>
+  <div class="hero-content">
+    <div class="hero-logo">
+      <img src="logo1.png" alt="PRIORISK">
     </div>
-    <div class="service-item">
-      <strong>Diagnóstico Express de Riesgo y Protección</strong>
-    </div>
-    <div class="service-item">
-      <strong>Evaluación de Riesgo Residencial</strong>
-    </div>
-    <div class="service-item">
-      <strong>Análisis de Rutas y Movilidad</strong>
-    </div>
-    <div class="service-item">
-      <strong>Diseño de Esquemas de Protección Ejecutiva</strong>
-    </div>
-    <div class="service-item">
-      <strong>Acompañamiento Estratégico en Seguridad</strong>
-    </div>
+    <h1>CONSULTORÍA ESTRATÉGICA EN RIESGO Y PROTECCIÓN EJECUTIVA</h1>
   </div>
 </section>
 
+<section id="quienes">
+  <h2><span>Quiénes</span> somos</h2>
+  <p>PRIORISK Consulting Group; somos una firma especializada en análisis estratégico de riesgo físico y protección ejecutiva, con presencia en Colombia. Nuestro enfoque no es vender seguridad, sino comprender el riesgo real de cada cliente antes de proponer cualquier medida de protección. Trabajamos bajo confidencialidad absoluta, con criterio técnico y visión estratégica, dirigidos exclusivamente a ejecutivos de alto nivel, familias empresarias y líderes expuestos.</p>
+</section>
+
+<section id="enfoque">
+  <h2><span>El</span> problema real</h2>
+  <div class="box">
+    <p>La mayoría de las decisiones de seguridad se toman sin un análisis previo del riesgo real. Se invierte sin criterio técnico, se reacciona después del incidente y se confía en proveedores con conflicto de interés.</p>
+  </div>
+</section>
+
+<section id="metodologia">
+  <h2><span>Metodología</span> PRIORISK</h2>
+  <p>Nuestro proceso de análisis sigue fases consecutivas de análisis de amenaza, vulnerabilidad e impacto; evaluación y priorización del riesgo; y recomendaciones estratégicas técnicas, organizacionales y operativas.</p>
+</section>
+
+<section id="servicios" class="services">
+  <h2><span>Servicios</span> principales</h2>
+
+  <div class="item"><i class="fa-solid fa-user-shield"></i><div><strong>Diagnóstico Estratégico de Riesgo Ejecutivo</strong><br>Análisis integral del perfil de riesgo de altos ejecutivos.</div></div>
+  <div class="item"><i class="fa-solid fa-bolt"></i><div><strong>Diagnóstico Express de Riesgo y Protección</strong><br>Evaluación rápida para decisiones urgentes o preliminares.</div></div>
+  <div class="item"><i class="fa-solid fa-house"></i><div><strong>Evaluación de Riesgo Residencial</strong><br>Auditoría de seguridad física en viviendas y propiedades.</div></div>
+  <div class="item"><i class="fa-solid fa-route"></i><div><strong>Análisis de Rutas y Movilidad</strong><br>Estudio de trayectos habituales y puntos críticos de exposición.</div></div>
+  <div class="item"><i class="fa-solid fa-users"></i><div><strong>Diseño de Esquemas de Protección Ejecutiva</strong><br>Propuesta de esquemas personalizados de protección personal.</div></div>
+  <div class="item"><i class="fa-solid fa-chart-line"></i><div><strong>Acompañamiento Estratégico en Seguridad</strong><br>Asesoría continua en gestión de riesgo y toma de decisiones.</div></div>
+</section>
+
+<section id="evaluacion" class="cta">
+  <h2>Evaluación estratégica inicial</h2>
+  <p>Modalidad de pago 50% al inicio y 50% contra entrega.</p>
+  <a href="mailto:priorisk.consulting@gmail.com?subject=Solicitud%20de%20Evaluación%20Estratégica">Solicitar evaluación</a>
+</section>
+
 <footer id="contacto">
-  <p>PRIORISK – Consultoría Internacional</p>
-  <p>priorisk.consulting@gmail.com | +57 321 905 7059</p>
-  <p><em>Antes de proteger, hay que entender el riesgo.</em></p>
+  <p><strong>Contacto directo</strong></p>
+  <p><a href="mailto:priorisk.consulting@gmail.com">priorisk.consulting@gmail.com</a></p>
+  <p>"Antes de proteger, hay que entender el riesgo."</p>
 </footer>
 
-<a class="whatsapp-float"
-   href="https://wa.me/573219057059?text=Hola%20PRIORISK,%20quisiera%20solicitar%20información%20sobre%20una%20evaluación%20estratégica%20inicial."
-   target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+<a class="whatsapp" href="https://wa.me/573000000000?text=Hola%20PRIORISK,%20deseo%20información%20sobre%20una%20evaluación%20estratégica." target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 </body>
