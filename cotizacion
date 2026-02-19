@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cotizador Interactivo | PRIORISK Consulting Group</title>
+<meta name="description" content="Configure su diagnóstico de riesgo ejecutivo paso a paso y obtenga una estimación personalizada. PRIORISK Consulting Group — Colombia.">
+<link rel="icon" href="images/logo-escudo.png.png">
+<link rel="stylesheet" href="shared.css">
+<style>
+.quoter-wrap{display:grid;grid-template-columns:1fr 320px;gap:2.5rem;align-items:start}
+@media(max-width:960px){.quoter-wrap{grid-template-columns:1fr}}
+.progress-wrap{margin-bottom:2.5rem}
+.prog-steps{display:flex;gap:0;margin-bottom:0}
+.prog-step{flex:1;display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:.8rem .5rem;cursor:pointer;position:relative}
+.prog-step::after{content:'';position:absolute;top:22px;left:50%;width:100%;height:2px;background:rgba(255,255,255,.1);z-index:0}
+.prog-step:last-child::after{display:none}
+.prog-dot{width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-family:var(--f-caps);font-size:.75rem;font-weight:700;color:rgba(255,255,255,.3);background:var(--c-dark);z-index:1;transition:var(--transition)}
+.prog-step.active .prog-dot{border-color:var(--c-gold);color:var(--c-gold);background:rgba(212,175,55,.1)}
+.prog-step.done .prog-dot{border-color:var(--c-gold);background:var(--c-gold);color:var(--c-black)}
+.prog-step.done::after{background:rgba(212,175,55,.4)}
+.prog-step.active::after{background:rgba(212,175,55,.2)}
+.prog-lbl{font-family:var(--f-caps);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);text-align:center}
+.prog-step.active .prog-lbl,.prog-step.done .prog-lbl{color:var(--c-gold)}
+.step-panel{display:none;animation:fadeUp .35s ease}
+.step-panel.active{display:block}
+.step-hd{margin-bottom:2rem}
+.step-hd .eyebrow{margin-bottom:.5rem}
+.step-hd h2{font-size:clamp(1.5rem,3vw,2.2rem);color:var(--c-white);margin-bottom:.4rem}
+.step-hd p{font-size:.95rem;color:var(--c-text-muted)}
+.opts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1rem;margin-top:1.5rem}
+.opts-grid.two{grid-template-columns:1fr 1fr}
+@media(max-width:580px){.opts-grid.two{grid-template-columns:1fr}}
+.ocard{background:var(--c-dark2);border:1.5px solid rgba(255,255,255,.09);border-radius:12px;padding:1.5rem;cursor:pointer;transition:var(--transition);position:relative;user-select:none}
+.ocard:hover{border-color:rgba(212,175,55,.4);transform:translateY(-2px)}
+.ocard.sel{border-color:var(--c-gold);background:rgba(212,175,55,.06);box-shadow:0 0 0 1px var(--c-gold),var(--shadow-gold)}
+.ocard.featured{border-color:rgba(212,175,55,.25)}
+.ftag{position:absolute;top:0;left:1rem;background:var(--c-gold);color:var(--c-black);font-family:var(--f-caps);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.12rem .55rem;border-radius:0 0 6px 6px;font-weight:700}
+.ochk{position:absolute;top:.9rem;right:.9rem;width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:transparent;transition:var(--transition)}
+.ocard.sel .ochk{background:var(--c-gold);border-color:var(--c-gold);color:var(--c-black)}
+.ocard.sel .ochk::after{content:'✓';font-weight:900}
+.oicon{font-size:1.8rem;margin-bottom:.9rem;display:block}
+.ocard h4{font-family:var(--f-caps);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--c-white);margin-bottom:.4rem}
+.ocard p{font-size:.83rem;color:var(--c-text-muted);line-height:1.65}
+.opill{display:inline-block;margin-top:.7rem;font-family:var(--f-caps);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-gold);border:1px solid rgba(212,175,55,.3);background:rgba(212,175,55,.07);padding:.15rem .5rem;border-radius:100px}
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.5rem}
+@media(max-width:580px){.scope-grid{grid-template-columns:1fr}}
+.stog{display:flex;align-items:center;gap:1rem;background:var(--c-dark2);border:1.5px solid rgba(255,255,255,.09);border-radius:10px;padding:.9rem 1.1rem;cursor:pointer;transition:var(--transition);user-select:none}
+.stog:hover{border-color:rgba(212,175,55,.35)}
+.stog.sel{border-color:var(--c-gold);background:rgba(212,175,55,.05)}
+.stog-icon{width:36px;height:36px;border-radius:8px;background:rgba(212,175,55,.1);display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;transition:var(--transition)}
+.stog.sel .stog-icon{background:rgba(212,175,55,.2)}
+.stog-txt h5{font-family:var(--f-caps);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--c-white);margin-bottom:.1rem}
+.stog-txt small{font-size:.72rem;color:var(--c-text-muted)}
+.stog-add{margin-left:auto;font-family:var(--f-caps);font-size:.68rem;color:rgba(212,175,55,.5);flex-shrink:0}
+.stog.sel .stog-add{color:var(--c-gold)}
+.extras-list{display:flex;flex-direction:column;gap:.7rem;margin-top:1.5rem}
+.erow{display:flex;align-items:center;gap:1rem;background:var(--c-dark2);border:1.5px solid rgba(255,255,255,.09);border-radius:10px;padding:1rem 1.3rem;cursor:pointer;transition:var(--transition);user-select:none}
+.erow:hover{border-color:rgba(212,175,55,.35)}
+.erow.on{border-color:var(--c-gold);background:rgba(212,175,55,.05)}
+.erow .eicon{font-size:1.2rem;flex-shrink:0}
+.etxt{flex:1}
+.etxt h5{font-size:.9rem;color:var(--c-white);font-weight:500;margin-bottom:.12rem}
+.etxt small{font-size:.75rem;color:var(--c-text-muted)}
+.eprice{font-family:var(--f-caps);font-size:.7rem;color:rgba(212,175,55,.5);flex-shrink:0}
+.erow.on .eprice{color:var(--c-gold)}
+.tpill{width:40px;height:21px;border-radius:100px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);position:relative;transition:var(--transition);flex-shrink:0}
+.tpill::after{content:'';position:absolute;top:3px;left:3px;width:13px;height:13px;border-radius:50%;background:rgba(255,255,255,.3);transition:var(--transition)}
+.erow.on .tpill{background:var(--c-gold);border-color:var(--c-gold)}
+.erow.on .tpill::after{left:calc(100% - 16px);background:var(--c-black)}
+.step-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.07)}
+.sumbox{background:var(--c-dark2);border:1px solid rgba(212,175,55,.2);border-radius:14px;padding:1.8rem;position:sticky;top:88px}
+.sumtitle{font-family:var(--f-caps);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--c-gold);margin-bottom:1.2rem;padding-bottom:.7rem;border-bottom:1px solid rgba(212,175,55,.15)}
+.sumline{display:flex;justify-content:space-between;align-items:start;gap:.5rem;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.sumline:last-of-type{border-bottom:none}
+.sk{font-size:.78rem;color:var(--c-text-muted);flex-shrink:0}
+.sv{font-size:.8rem;color:var(--c-white);text-align:right;font-weight:500;line-height:1.4}
+.sumprice-block{margin-top:1.2rem;padding-top:1.1rem;border-top:2px solid rgba(212,175,55,.25)}
+.sumprice-lbl{font-family:var(--f-caps);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--c-text-muted);margin-bottom:.25rem}
+.sumprice{font-family:var(--f-display);font-size:2rem;font-weight:700;color:var(--c-gold);line-height:1.1}
+.sumnote{font-size:.72rem;color:var(--c-text-muted);margin-top:.3rem;line-height:1.5}
+.sumdisclaimer{margin-top:1rem;padding:.8rem;background:rgba(212,175,55,.04);border-radius:7px;border:1px solid rgba(212,175,55,.1);font-size:.73rem;color:var(--c-text-muted);line-height:1.6}
+.result-screen{display:none}
+.result-screen.show{display:block;animation:fadeUp .5s ease}
+.res-hero{text-align:center;padding:3rem 0 2rem}
+.res-badge{display:inline-flex;align-items:center;justify-content:center;width:70px;height:70px;border-radius:50%;border:2px solid var(--c-gold);background:rgba(212,175,55,.08);font-size:1.9rem;margin-bottom:1.4rem}
+.res-price{font-family:var(--f-display);font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--c-gold);margin:.5rem 0}
+.res-card{background:var(--c-dark2);border:1px solid rgba(212,175,55,.18);border-radius:14px;padding:2rem;max-width:600px;margin:1.8rem auto}
+.resrow{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.07);gap:1rem}
+.resrow:last-child{border:none;font-weight:700}
+.resrow:last-child .rk,.resrow:last-child .rv{color:var(--c-gold)}
+.rk{font-size:.88rem;color:var(--c-text-muted)}
+.rv{font-size:.88rem;color:var(--c-white);text-align:right}
+.wa-cta{display:inline-flex;align-items:center;gap:.75rem;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:1rem 2.5rem;border-radius:8px;font-family:var(--f-caps);font-size:.92rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:var(--transition);margin-top:1.5rem;box-shadow:0 4px 20px rgba(37,211,102,.3)}
+.wa-cta:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(37,211,102,.45)}
+.res-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+</style>
+</head>
+<body>
+
+<header class="site-header"><div class="container">
+  <a href="index.html" class="logo-wrap"><img src="images/logo-escudo.png.png" alt="PRIORISK"></a>
+  <nav><ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="metodologia.html">Metodología</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="inteligencia.html">Inteligencia</a></li>
+    <li><a href="hse.html">HSE</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul></nav>
+  <div class="header-cta">
+    <a href="contacto.html" class="btn btn-outline">Contacto</a>
+    <a href="https://wa.me/573219057059" target="_blank" class="btn btn-gold">WhatsApp</a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</div></header>
+
+<section class="page-hero" style="min-height:36vh">
+  <div class="container page-hero-content">
+    <p class="eyebrow">Herramienta de Evaluación</p>
+    <h1>Cotizador<br><em>Interactivo</em></h1>
+    <div class="gold-line"></div>
+    <p>Configure su diagnóstico paso a paso y obtenga una estimación en 2 minutos. Sin registro. Completamente confidencial.</p>
+  </div>
+</section>
+
+<section class="section-sm" id="cotizador"><div class="container">
+
+  <!-- WIZARD -->
+  <div id="wizard">
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap">
+      <div class="prog-steps">
+        <div class="prog-step active" id="ps1"><div class="prog-dot">1</div><span class="prog-lbl">Servicio</span></div>
+        <div class="prog-step" id="ps2"><div class="prog-dot">2</div><span class="prog-lbl">Modalidad</span></div>
+        <div class="prog-step" id="ps3"><div class="prog-dot">3</div><span class="prog-lbl">Alcance</span></div>
+        <div class="prog-step" id="ps4"><div class="prog-dot">4</div><span class="prog-lbl">Adicionales</span></div>
+      </div>
+    </div>
+
+    <div class="quoter-wrap">
+      <!-- STEPS -->
+      <div>
+
+        <!-- STEP 1 -->
+        <div class="step-panel active" id="step1">
+          <div class="step-hd">
+            <p class="eyebrow">Paso 1 de 4</p>
+            <h2>¿Qué servicio necesita?</h2>
+            <p>Seleccione el diagnóstico que mejor corresponde a su situación. Si no está seguro, elija el más amplio.</p>
+          </div>
+          <div class="opts-grid">
+            <div class="ocard" onclick="pickService(this)" data-id="estrategico" data-min="4500" data-max="8000">
+              <div class="ochk"></div>
+              <span class="oicon">🎯</span>
+              <h4>Diagnóstico Estratégico</h4>
+              <p>Análisis integral del perfil de riesgo ejecutivo. Informe completo con matriz de riesgos priorizada.</p>
+              <span class="opill">Más completo</span>
+            </div>
+            <div class="ocard" onclick="pickService(this)" data-id="express" data-min="1800" data-max="3200">
+              <div class="ochk"></div>
+              <span class="oicon">⚡</span>
+              <h4>Diagnóstico Express</h4>
+              <p>Evaluación condensada en 5–7 días hábiles. Ideal para decisiones urgentes o primer acercamiento.</p>
+              <span class="opill">5–7 días</span>
+            </div>
+            <div class="ocard" onclick="pickService(this)" data-id="residencial" data-min="1500" data-max="2800">
+              <div class="ochk"></div>
+              <span class="oicon">🏠</span>
+              <h4>Riesgo Residencial</h4>
+              <p>Auditoría técnica de seguridad en vivienda o propiedad. Vulnerabilidades y recomendaciones.</p>
+            </div>
+            <div class="ocard" onclick="pickService(this)" data-id="rutas" data-min="900" data-max="1800">
+              <div class="ochk"></div>
+              <span class="oicon">🗺️</span>
+              <h4>Análisis de Rutas</h4>
+              <p>Mapeo de trayectos y puntos críticos de exposición durante desplazamientos habituales.</p>
+            </div>
+            <div class="ocard" onclick="pickService(this)" data-id="esquema" data-min="3000" data-max="6500">
+              <div class="ochk"></div>
+              <span class="oicon">🛡️</span>
+              <h4>Esquema de Protección</h4>
+              <p>Diseño completo de protocolos y estructura del esquema de protección personal.</p>
+            </div>
+            <div class="ocard" onclick="pickService(this)" data-id="continuo" data-min="2200" data-max="4000">
+              <div class="ochk"></div>
+              <span class="oicon">📊</span>
+              <h4>Acompañamiento Continuo</h4>
+              <p>Monitoreo permanente, alertas en tiempo real y actualización mensual de protocolos.</p>
+              <span class="opill">Mensual</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-panel" id="step2">
+          <div class="step-hd">
+            <p class="eyebrow">Paso 2 de 4</p>
+            <h2>¿Qué modalidad prefiere?</h2>
+            <p>La modalidad determina la profundidad del análisis, el tiempo de entrega y los entregables incluidos.</p>
+          </div>
+          <div class="opts-grid two">
+            <div class="ocard" onclick="pickTier(this)" data-id="express" data-mult="0.82" style="border-top:3px solid rgba(212,175,55,.35)">
+              <div class="ochk"></div>
+              <span class="oicon">⚡</span>
+              <h4>Línea Express</h4>
+              <p>Informe ejecutivo condensado. OSINT básico. Matriz de riesgo inicial. Presentación virtual.</p>
+              <div style="margin-top:1rem;display:flex;flex-direction:column;gap:.35rem">
+                <span style="font-size:.8rem;color:var(--c-text-muted)">✓ Informe ejecutivo condensado</span>
+                <span style="font-size:.8rem;color:var(--c-text-muted)">✓ Matriz de riesgo básica</span>
+                <span style="font-size:.8rem;color:var(--c-text-muted)">✓ 5–7 días hábiles</span>
+                <span style="font-size:.8rem;color:rgba(255,255,255,.2)">— Roadmap de protección</span>
+                <span style="font-size:.8rem;color:rgba(255,255,255,.2)">— Anexos técnicos</span>
+              </div>
+            </div>
+            <div class="ocard featured" onclick="pickTier(this)" data-id="premium" data-mult="1.0" style="border-top:3px solid var(--c-gold)">
+              <div class="ftag">Recomendado</div>
+              <div class="ochk"></div>
+              <span class="oicon">💎</span>
+              <h4>Línea Premium</h4>
+              <p>Análisis integral con OSINT profundo, análisis de rutinas, roadmap detallado e implementación.</p>
+              <div style="margin-top:1rem;display:flex;flex-direction:column;gap:.35rem">
+                <span style="font-size:.8rem;color:var(--c-text-muted)">✓ Informe técnico integral</span>
+                <span style="font-size:.8rem;color:var(--c-text-muted)">✓ Matriz completa ponderada</span>
+                <span style="font-size:.8rem;color:var(--c-text-muted)">✓ 15–25 días hábiles</span>
+                <span style="font-size:.8rem;color:var(--c-text-muted)">✓ Roadmap de protección</span>
+                <span style="font-size:.8rem;color:var(--c-text-muted)">✓ Anexos técnicos confidenciales</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-panel" id="step3">
+          <div class="step-hd">
+            <p class="eyebrow">Paso 3 de 4</p>
+            <h2>¿Cuál es el alcance del análisis?</h2>
+            <p>Seleccione todos los componentes que apliquen. El perfil personal siempre está incluido.</p>
+          </div>
+          <div class="scope-grid">
+            <div class="stog sel" onclick="toggleScope(this)" data-id="personal" data-add="0">
+              <div class="stog-icon">👤</div>
+              <div class="stog-txt"><h5>Perfil Personal</h5><small>Rutinas, exposición y relaciones de riesgo del ejecutivo</small></div>
+              <span class="stog-add">Base</span>
+            </div>
+            <div class="stog" onclick="toggleScope(this)" data-id="familiar" data-add="800">
+              <div class="stog-icon">👨‍👩‍👧</div>
+              <div class="stog-txt"><h5>Núcleo Familiar</h5><small>Cónyuge, hijos y familiares directos convivientes</small></div>
+              <span class="stog-add">+$800</span>
+            </div>
+            <div class="stog" onclick="toggleScope(this)" data-id="residencia" data-add="600">
+              <div class="stog-icon">🏠</div>
+              <div class="stog-txt"><h5>Entorno Residencial</h5><small>Vulnerabilidades en vivienda principal y accesos</small></div>
+              <span class="stog-add">+$600</span>
+            </div>
+            <div class="stog" onclick="toggleScope(this)" data-id="movilidad" data-add="500">
+              <div class="stog-icon">🚗</div>
+              <div class="stog-txt"><h5>Movilidad y Rutas</h5><small>Trayectos habituales y puntos de exposición</small></div>
+              <span class="stog-add">+$500</span>
+            </div>
+            <div class="stog" onclick="toggleScope(this)" data-id="digital" data-add="700">
+              <div class="stog-icon">💻</div>
+              <div class="stog-txt"><h5>Huella Digital</h5><small>Exposición en línea y vulnerabilidades digitales</small></div>
+              <span class="stog-add">+$700</span>
+            </div>
+            <div class="stog" onclick="toggleScope(this)" data-id="corporativo" data-add="1200">
+              <div class="stog-icon">🏢</div>
+              <div class="stog-txt"><h5>Entorno Corporativo</h5><small>Empresa, equipo próximo y contexto sectorial</small></div>
+              <span class="stog-add">+$1.200</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step-panel" id="step4">
+          <div class="step-hd">
+            <p class="eyebrow">Paso 4 de 4</p>
+            <h2>Servicios adicionales</h2>
+            <p>Complemente su diagnóstico con componentes especializados según sus necesidades.</p>
+          </div>
+          <div class="extras-list">
+            <div class="erow" onclick="toggleExtra(this)" data-id="urgente" data-add="800">
+              <span class="eicon">⚡</span>
+              <div class="etxt"><h5>Tratamiento Urgente</h5><small>Prioridad absoluta — entrega en 50% del tiempo estándar</small></div>
+              <span class="eprice">+$800</span>
+              <div class="tpill"></div>
+            </div>
+            <div class="erow" onclick="toggleExtra(this)" data-id="briefing" data-add="400">
+              <span class="eicon">🎤</span>
+              <div class="etxt"><h5>Sesión de Briefing Adicional</h5><small>Reunión técnica con el equipo directivo para presentar hallazgos</small></div>
+              <span class="eprice">+$400</span>
+              <div class="tpill"></div>
+            </div>
+            <div class="erow" onclick="toggleExtra(this)" data-id="seguimiento" data-add="600">
+              <span class="eicon">📅</span>
+              <div class="etxt"><h5>Seguimiento Post-Entrega (30 días)</h5><small>Consultas y ajustes durante el mes posterior al informe</small></div>
+              <span class="eprice">+$600</span>
+              <div class="tpill"></div>
+            </div>
+            <div class="erow" onclick="toggleExtra(this)" data-id="hse" data-add="500">
+              <span class="eicon">⚙️</span>
+              <div class="etxt"><h5>Integración con Sistema HSE / BCP</h5><small>Adecuación del informe para sistemas de gestión corporativos</small></div>
+              <span class="eprice">+$500</span>
+              <div class="tpill"></div>
+            </div>
+            <div class="erow" onclick="toggleExtra(this)" data-id="capacitacion" data-add="900">
+              <span class="eicon">🎓</span>
+              <div class="etxt"><h5>Capacitación del Equipo de Seguridad</h5><small>Transferencia de conocimiento al equipo de seguridad interno</small></div>
+              <span class="eprice">+$900</span>
+              <div class="tpill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="step-nav">
+          <button class="btn btn-ghost" id="btnPrev" onclick="goPrev()" style="visibility:hidden">← Anterior</button>
+          <button class="btn btn-gold" id="btnNext" onclick="goNext()">Siguiente →</button>
+          <button class="btn btn-gold" id="btnResult" onclick="showResult()" style="display:none">Ver mi Cotización →</button>
+        </div>
+      </div>
+
+      <!-- STICKY SUMMARY -->
+      <div class="sumbox" id="sumbox">
+        <div class="sumtitle">📋 Su Configuración</div>
+        <div class="sumline"><span class="sk">Servicio</span><span class="sv" id="sServ">—</span></div>
+        <div class="sumline"><span class="sk">Modalidad</span><span class="sv" id="sTier">—</span></div>
+        <div class="sumline"><span class="sk">Alcance</span><span class="sv" id="sScope">—</span></div>
+        <div class="sumline"><span class="sk">Adicionales</span><span class="sv" id="sExtras">—</span></div>
+        <div class="sumprice-block">
+          <div class="sumprice-lbl">Estimación referencial (USD)</div>
+          <div class="sumprice" id="sPrice">—</div>
+          <div class="sumnote" id="sNote">Complete los pasos para ver su estimación</div>
+        </div>
+        <div class="sumdisclaimer">Esta estimación es referencial. El precio definitivo se establece en propuesta formal tras la consulta inicial.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div class="result-screen" id="resultScreen">
+    <div class="res-hero">
+      <div class="res-badge">🛡️</div>
+      <p class="eyebrow" style="justify-content:center">Su Estimación Personalizada</p>
+      <h2>Cotización PRIORISK</h2>
+      <div class="res-price" id="resPrice">—</div>
+      <p style="color:var(--c-text-muted);max-width:440px;margin:.4rem auto;font-size:.92rem">Precio referencial en USD. La propuesta definitiva se emite tras la consulta técnica inicial sin costo.</p>
+    </div>
+    <div class="res-card" id="resCard"></div>
+    <div style="text-align:center">
+      <p style="color:var(--c-text-muted);font-size:.88rem;max-width:440px;margin:0 auto">Envíenos esta cotización por WhatsApp y agendamos su consulta inicial confidencial.</p>
+      <a href="#" class="wa-cta" id="waLink" target="_blank">
+        <svg class="wa-svg" viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.737 5.607 2.137 8.048L0 32l8.133-2.127A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.287 13.287 0 01-6.787-1.854l-.487-.293-4.587 1.227 1.227-4.587-.293-.487A13.287 13.287 0 012.667 16C2.667 8.9 8.9 2.667 16 2.667S29.333 8.9 29.333 16 23.1 29.333 16 29.333zm7.3-9.867c-.373-.187-2.2-1.093-2.547-1.213-.347-.12-.6-.187-.853.187s-.973 1.213-1.187 1.467-.427.28-.8.093-1.573-.587-2.993-1.867c-1.107-.987-1.853-2.213-2.067-2.587s-.02-.573.16-.76.373-.44.56-.653.253-.373.373-.627.06-.467-.027-.653-.853-2.053-1.16-2.813c-.307-.733-.613-.587-.84-.587-.213 0-.467-.027-.72-.027s-.653.093-.993.467-1.307 1.293-1.307 3.147 1.373 3.68 1.56 3.933 2.653 4.073 6.453 5.707c.9.373 1.6.593 2.147.747.9.28 1.72.24 2.373.147.72-.093 2.213-.907 2.52-1.773s.307-1.613.213-1.773-.347-.253-.72-.44z"/></svg>
+        Enviar Cotización por WhatsApp
+      </a>
+      <div class="res-actions">
+        <button class="btn btn-ghost" onclick="resetQuoter()">← Nueva Cotización</button>
+        <a href="contacto.html" class="btn btn-outline">Contacto Formal</a>
+      </div>
+    </div>
+  </div>
+
+</div></section>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><img src="images/logo-escudo.png.png" alt="PRIORISK"><p>Diagnóstico Estratégico de Riesgo y Protección Ejecutiva. Colombia.</p></div>
+    <div class="footer-col"><h5>Servicios</h5><ul><li><a href="servicios.html">Portafolio</a></li><li><a href="cotizacion.html">Cotizador</a></li></ul></div>
+    <div class="footer-col"><h5>Empresa</h5><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="metodologia.html">Metodología</a></li><li><a href="hse.html">Integración HSE</a></li></ul></div>
+    <div class="footer-col"><h5>Contacto</h5><ul><li><a href="/cdn-cgi/l/email-protection#9bf8f4f5effaf8eff4dbebe9f2f4e9f2e8f0b5f8f4f6"><span class="__cf_email__" data-cfemail="fb9894958f9a988f94bb8b89929489928890d5989496">[email&#160;protected]</span></a></li><li><a href="https://wa.me/573219057059">+57 321 905 7059</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 PRIORISK Consulting Group</span><span>Todos los derechos reservados</span></div>
+</div></footer>
+
+<div class="wa-float"><a href="https://wa.me/573219057059" target="_blank" class="wa-btn" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.737 5.607 2.137 8.048L0 32l8.133-2.127A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.287 13.287 0 01-6.787-1.854l-.487-.293-4.587 1.227 1.227-4.587-.293-.487A13.287 13.287 0 012.667 16C2.667 8.9 8.9 2.667 16 2.667S29.333 8.9 29.333 16 23.1 29.333 16 29.333zm7.3-9.867c-.373-.187-2.2-1.093-2.547-1.213-.347-.12-.6-.187-.853.187s-.973 1.213-1.187 1.467-.427.28-.8.093-1.573-.587-2.993-1.867c-1.107-.987-1.853-2.213-2.067-2.587s-.02-.573.16-.76.373-.44.56-.653.253-.373.373-.627.06-.467-.027-.653-.853-2.053-1.16-2.813c-.307-.733-.613-.587-.84-.587-.213 0-.467-.027-.72-.027s-.653.093-.993.467-1.307 1.293-1.307 3.147 1.373 3.68 1.56 3.933 2.653 4.073 6.453 5.707c.9.373 1.6.593 2.147.747.9.28 1.72.24 2.373.147.72-.093 2.213-.907 2.52-1.773s.307-1.613.213-1.773-.347-.253-.72-.44z"/></svg></a></div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const S={step:1,service:null,tier:null,scopes:['personal'],extras:[],baseMin:0,baseMax:0,mult:1,scopeAdd:0,extraAdd:0};
+const SN={estrategico:'Diagnóstico Estratégico',express:'Diagnóstico Express',residencial:'Riesgo Residencial',rutas:'Análisis de Rutas',esquema:'Esquema de Protección',continuo:'Acompañamiento Continuo'};
+const TN={express:'⚡ Línea Express',premium:'💎 Línea Premium'};
+const SCN={personal:'Personal',familiar:'+Familiar',residencia:'+Residencial',movilidad:'+Movilidad',digital:'+Digital',corporativo:'+Corporativo'};
+const EN={urgente:'Urgente',briefing:'Briefing Extra',seguimiento:'Seguimiento 30d',hse:'Integración HSE',capacitacion:'Capacitación'};
+
+function pickService(el){
+  document.querySelectorAll('#step1 .ocard').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel');
+  S.service=el.dataset.id; S.baseMin=+el.dataset.min; S.baseMax=+el.dataset.max;
+  updateSum();
+}
+function pickTier(el){
+  document.querySelectorAll('#step2 .ocard').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel');
+  S.tier=el.dataset.id; S.mult=+el.dataset.mult;
+  updateSum();
+}
+function toggleScope(el){
+  if(el.dataset.id==='personal') return;
+  el.classList.toggle('sel');
+  const add=+el.dataset.add;
+  if(el.classList.contains('sel')){S.scopes.push(el.dataset.id);S.scopeAdd+=add;}
+  else{S.scopes=S.scopes.filter(s=>s!==el.dataset.id);S.scopeAdd-=add;}
+  updateSum();
+}
+function toggleExtra(el){
+  el.classList.toggle('on');
+  const add=+el.dataset.add;
+  if(el.classList.contains('on')){S.extras.push(el.dataset.id);S.extraAdd+=add;}
+  else{S.extras=S.extras.filter(e=>e!==el.dataset.id);S.extraAdd-=add;}
+  updateSum();
+}
+function updateSum(){
+  document.getElementById('sServ').textContent=S.service?SN[S.service]:'—';
+  document.getElementById('sTier').textContent=S.tier?TN[S.tier]:'—';
+  document.getElementById('sScope').textContent=S.scopes.length?S.scopes.map(s=>SCN[s]).join(', '):'—';
+  document.getElementById('sExtras').textContent=S.extras.length?S.extras.map(e=>EN[e]).join(', '):'—';
+  if(S.service&&S.tier){
+    const min=Math.round((S.baseMin*S.mult+S.scopeAdd+S.extraAdd)/100)*100;
+    const max=Math.round((S.baseMax*S.mult+S.scopeAdd+S.extraAdd)/100)*100;
+    document.getElementById('sPrice').textContent=`$${min.toLocaleString('es')} – $${max.toLocaleString('es')}`;
+    document.getElementById('sNote').textContent='USD · Estimación orientativa';
+    S._min=min; S._max=max;
+  }
+}
+function setStep(n){
+  document.getElementById('step'+S.step).classList.remove('active');
+  ['ps1','ps2','ps3','ps4'].forEach((id,i)=>{
+    const el=document.getElementById(id);
+    el.classList.remove('active','done');
+    if(i+1<n) el.classList.add('done');
+    else if(i+1===n) el.classList.add('active');
+  });
+  S.step=n;
+  document.getElementById('step'+n).classList.add('active');
+  const prev=document.getElementById('btnPrev');
+  const next=document.getElementById('btnNext');
+  const res=document.getElementById('btnResult');
+  prev.style.visibility=n>1?'visible':'hidden';
+  next.style.display=n<4?'inline-flex':'none';
+  res.style.display=n===4?'inline-flex':'none';
+  window.scrollTo({top:document.getElementById('cotizador').offsetTop-80,behavior:'smooth'});
+}
+function goNext(){
+  if(S.step===1&&!S.service){alert('Por favor seleccione un tipo de servicio.');return;}
+  if(S.step===2&&!S.tier){alert('Por favor seleccione una modalidad.');return;}
+  if(S.step<4) setStep(S.step+1);
+}
+function goPrev(){if(S.step>1) setStep(S.step-1);}
+function showResult(){
+  document.getElementById('wizard').style.display='none';
+  const rs=document.getElementById('resultScreen');
+  rs.classList.add('show');
+  const min=S._min||0; const max=S._max||0;
+  document.getElementById('resPrice').textContent=`$${min.toLocaleString('es')} – $${max.toLocaleString('es')} USD`;
+  const scStr=S.scopes.map(s=>SCN[s]).join(', ');
+  const exStr=S.extras.length?S.extras.map(e=>EN[e]).join(', '):'Ninguno';
+  document.getElementById('resCard').innerHTML=`
+    <div class="resrow"><span class="rk">Servicio Principal</span><span class="rv">${SN[S.service]}</span></div>
+    <div class="resrow"><span class="rk">Modalidad</span><span class="rv">${TN[S.tier]}</span></div>
+    <div class="resrow"><span class="rk">Alcance</span><span class="rv">${scStr}</span></div>
+    <div class="resrow"><span class="rk">Adicionales</span><span class="rv">${exStr}</span></div>
+    <div class="resrow"><span class="rk">Estimación Total</span><span class="rv">$${min.toLocaleString('es')} – $${max.toLocaleString('es')} USD</span></div>`;
+  const msg=encodeURIComponent(`Hola PRIORISK 👋\n\nCompletó el cotizador con esta configuración:\n📌 Servicio: ${SN[S.service]}\n📌 Modalidad: ${TN[S.tier]}\n📌 Alcance: ${scStr}\n📌 Adicionales: ${exStr}\n💰 Estimación: $${min.toLocaleString('es')} – $${max.toLocaleString('es')} U
