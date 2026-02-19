@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contacto | PRIORISK Consulting Group</title>
+<meta name="description" content="Contacte a PRIORISK para una consulta confidencial sobre proteccion ejecutiva e inteligencia estrategica. Colombia.">
+<link rel="icon" href="images/logo-escudo.png.png">
+<link rel="stylesheet" href="shared.css">
+<style>
+.contact-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:start}
+@media(max-width:800px){.contact-layout{grid-template-columns:1fr;gap:2.5rem}}
+.channel-list{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.channel-card{display:flex;align-items:center;gap:1.5rem;background:var(--c-dark2);border:1.5px solid rgba(212,175,55,.14);border-radius:12px;padding:1.4rem 1.6rem;transition:var(--transition);text-decoration:none}
+.channel-card:hover{border-color:rgba(212,175,55,.5);transform:translateX(5px);box-shadow:var(--shadow-gold)}
+.ch-icon{font-size:1.7rem;width:48px;text-align:center;flex-shrink:0}
+.ch-label{font-family:var(--f-caps);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c-gold);margin-bottom:.25rem}
+.ch-val{color:var(--c-white);font-size:.98rem;font-weight:500}
+.ch-note{color:var(--c-text-muted);font-size:.78rem;margin-top:.15rem}
+.form-wrap{background:var(--c-dark2);border:1px solid rgba(212,175,55,.14);border-radius:12px;padding:2.5rem}
+.fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.2rem}
+.fg label{font-family:var(--f-caps);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--c-gold)}
+.fg input,.fg select,.fg textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.85rem 1rem;color:var(--c-white);font-family:var(--f-body);font-size:.96rem;outline:none;transition:var(--transition);width:100%}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--c-gold);box-shadow:0 0 0 3px rgba(212,175,55,.12)}
+.fg select option{background:var(--c-dark2)}
+.fg textarea{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+.form-note{font-size:.8rem;color:var(--c-text-muted);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+.form-ok{display:none;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.3);border-radius:6px;padding:1rem;text-align:center;color:#25D366;font-family:var(--f-caps);font-size:.85rem;letter-spacing:.08em;margin-top:.8rem}
+.privacy-note{margin-top:1.5rem;padding:1.2rem 1.5rem;background:rgba(212,175,55,.05);border-left:3px solid var(--c-gold);border-radius:0 6px 6px 0}
+.privacy-note h5{color:var(--c-gold);font-size:.78rem;margin-bottom:.4rem}
+.privacy-note p{font-size:.83rem;color:var(--c-text-muted);line-height:1.7}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a href="index.html" class="logo-wrap"><img src="images/logo-escudo.png.png" alt="PRIORISK"></a>
+  <nav><ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li>
+    <li><a href="metodologia.html">Metodologia</a></li><li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="inteligencia.html">Inteligencia</a></li><li><a href="hse.html">HSE</a></li>
+    <li><a href="contacto.html" class="active">Contacto</a></li>
+  </ul></nav>
+  <div class="header-cta">
+    <a href="cotizacion.html" class="btn btn-outline">Cotizador</a>
+    <a href="https://wa.me/573219057059" target="_blank" class="btn btn-gold">WhatsApp</a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</div></header>
+
+<section class="page-hero"><div class="container page-hero-content">
+  <p class="eyebrow">Primera Conversacion</p>
+  <h1>Hablemos<br><em>con Confianza</em></h1>
+  <div class="gold-line"></div>
+  <p>Toda consulta inicial es estrictamente confidencial y sin compromiso. Evaluamos juntos si PRIORISK puede agregar valor a su situacion especifica.</p>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="contact-layout">
+    <div>
+      <p class="eyebrow">Canales Directos</p>
+      <h2>Elegir el canal<br><em>de preferencia</em></h2>
+      <div class="gold-line"></div>
+      <p style="color:var(--c-text-muted);margin-bottom:0">Respondemos en menos de 4 horas en horario habil. Para situaciones urgentes, WhatsApp es el canal prioritario.</p>
+      <div class="channel-list">
+        <a href="https://wa.me/573219057059?text=Hola%20PRIORISK%2C%20quisiera%20una%20consulta%20confidencial" target="_blank" class="channel-card">
+          <div class="ch-icon">💬</div>
+          <div><div class="ch-label">WhatsApp — Canal Prioritario</div><div class="ch-val">+57 321 905 7059</div><div class="ch-note">Respuesta en menos de 2 horas · 7 dias</div></div>
+        </a>
+        <a href="/cdn-cgi/l/email-protection#31525e5f455052455e714143585e4358425a1f525e5c0e4244535b5452450c725e5f42445d4550140301725e5f575855545f5258505d1403016163787e6378627a" class="channel-card">
+          <div class="ch-icon">📧</div>
+          <div><div class="ch-label">Email Corporativo</div><div class="ch-val"><span class="__cf_email__" data-cfemail="42212d2c362321362d0232302b2d302b31296c212d2f">[email&#160;protected]</span></div><div class="ch-note">Respuesta en menos de 4 horas habiles</div></div>
+        </a>
+        <a href="https://linkedin.com/company/priorisk" target="_blank" class="channel-card">
+          <div class="ch-icon">💼</div>
+          <div><div class="ch-label">LinkedIn</div><div class="ch-val">PRIORISK Consulting Group</div><div class="ch-note">Perfil corporativo y novedades del sector</div></div>
+        </a>
+      </div>
+      <div class="privacy-note">
+        <h5>Protocolo de Privacidad</h5>
+        <p>Toda informacion compartida durante la consulta inicial esta protegida por nuestro protocolo de confidencialidad. No compartimos datos con terceros bajo ninguna circunstancia.</p>
+      </div>
+    </div>
+
+    <div class="form-wrap">
+      <h3 style="margin-bottom:.4rem">Formulario de Consulta</h3>
+      <p style="color:var(--c-text-muted);font-size:.9rem;margin-bottom:2rem">Un analista se comunicara con usted en el menor tiempo posible.</p>
+      <form id="cForm" onsubmit="handleSend(event)">
+        <div class="form-row">
+          <div class="fg"><label>Nombre *</label><input type="text" placeholder="Su nombre completo" required></div>
+          <div class="fg"><label>Cargo *</label><input type="text" placeholder="CEO, Director..." required></div>
+        </div>
+        <div class="form-row">
+          <div class="fg"><label>Email *</label><input type="email" placeholder="su@empresa.com" required></div>
+          <div class="fg"><label>WhatsApp</label><input type="tel" placeholder="+57 300 000 0000"></div>
+        </div>
+        <div class="fg"><label>Empresa u Organizacion</label><input type="text" placeholder="Nombre de la empresa"></div>
+        <div class="fg">
+          <label>Servicio de Interes *</label>
+          <select required>
+            <option value="" disabled selected>Seleccione un servicio...</option>
+            <option>Diagnostico Estrategico de Riesgo Ejecutivo</option>
+            <option>Diagnostico Express (5-7 dias)</option>
+            <option>Evaluacion de Riesgo Residencial</option>
+            <option>Analisis de Rutas y Movilidad</option>
+            <option>Diseno de Esquema de Proteccion</option>
+            <option>Acompanamiento Estrategico Continuo</option>
+            <option>No estoy seguro — requiero orientacion</option>
+          </select>
+        </div>
+        <div class="fg"><label>Contexto de su Consulta</label><textarea placeholder="Describa brevemente su situacion. Toda informacion es estrictamente confidencial."></textarea></div>
+        <p class="form-note">🔒 Esta consulta es estrictamente confidencial. Nunca compartimos su informacion.</p>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;padding:1rem 2rem">Enviar Consulta Confidencial</button>
+        <div class="form-ok" id="fOk">✓ Mensaje recibido — Le contactaremos en breve</div>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><img src="images/logo-escudo.png.png" alt="PRIORISK"><p>Diagnostico Estrategico de Riesgo y Proteccion Ejecutiva. Colombia.</p></div>
+    <div class="footer-col"><h5>Servicios</h5><ul><li><a href="servicios.html">Portafolio</a></li><li><a href="cotizacion.html">Cotizador</a></li></ul></div>
+    <div class="footer-col"><h5>Empresa</h5><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="metodologia.html">Metodologia</a></li></ul></div>
+    <div class="footer-col"><h5>Contacto</h5><ul><li><a href="/cdn-cgi/l/email-protection#87e4e8e9f3e6e4f3e8c7f7f5eee8f5eef4eca9e4e8ea"><span class="__cf_email__" data-cfemail="84e7ebeaf0e5e7f0ebc4f4f6edebf6edf7efaae7ebe9">[email&#160;protected]</span></a></li><li><a href="https://wa.me/573219057059">+57 321 905 7059</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 PRIORISK Consulting Group</span><span>Todos los derechos reservados</span></div>
+</div></footer>
+<div class="wa-float"><a href="https://wa.me/573219057059" target="_blank" class="wa-btn" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.737 5.607 2.137 8.048L0 32l8.133-2.127A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.287 13.287 0 01-6.787-1.854l-.487-.293-4.587 1.227 1.227-4.587-.293-.487A13.287 13.287 0 012.667 16C2.667 8.9 8.9 2.667 16 2.667S29.333 8.9 29.333 16 23.1 29.333 16 29.333zm7.3-9.867c-.373-.187-2.2-1.093-2.547-1.213-.347-.12-.6-.187-.853.187s-.973 1.213-1.187 1.467c-.213.253-.427.28-.8.093s-1.573-.587-2.993-1.867c-1.107-.987-1.853-2.213-2.067-2.587s-.02-.573.16-.76c.167-.167.373-.44.56-.653s.253-.373.373-.627c.12-.253.06-.467-.027-.653s-.853-2.053-1.16-2.813c-.307-.733-.613-.587-.84-.587-.213 0-.467-.027-.72-.027s-.653.093-.993.467-1.307 1.293-1.307 3.147 1.373 3.68 1.56 3.933 2.653 4.073 6.453 5.707c.9.373 1.6.593 2.147.747.9.28 1.72.
