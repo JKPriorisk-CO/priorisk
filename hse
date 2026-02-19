@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Integración HSE y BCP | PRIORISK Consulting Group</title>
+<meta name="description" content="PRIORISK integra el análisis de riesgo ejecutivo con sistemas HSE, Business Continuity Planning y marcos corporativos de gestión de riesgo. ISO 31000, OHSAS, BCP.">
+<link rel="icon" href="images/logo-escudo.png.png">
+<link rel="stylesheet" href="shared.css">
+<style>
+.hse-intro-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:800px){.hse-intro-grid{grid-template-columns:1fr;gap:2.5rem}}
+.framework-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+@media(max-width:700px){.framework-grid{grid-template-columns:1fr}}
+.fw-card{background:var(--c-dark2);border:1px solid rgba(212,175,55,.12);border-radius:12px;padding:2rem;transition:var(--transition);position:relative;overflow:hidden}
+.fw-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--c-gold);transform:scaleX(0);transform-origin:left;transition:var(--transition)}
+.fw-card:hover::before{transform:scaleX(1)}
+.fw-card:hover{border-color:rgba(212,175,55,.4);box-shadow:var(--shadow-gold);transform:translateY(-4px)}
+.fw-icon{font-size:2.4rem;margin-bottom:1.2rem}
+.fw-card h4{color:var(--c-gold);margin-bottom:.6rem;font-size:.88rem}
+.fw-card p{font-size:.9rem;color:var(--c-text-muted);line-height:1.75}
+.fw-tag{display:inline-block;margin-top:1rem;font-family:var(--f-caps);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-gold);border:1px solid rgba(212,175,55,.25);background:rgba(212,175,55,.07);padding:.2rem .6rem;border-radius:100px}
+.integration-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:2.5rem;background:var(--c-dark2);border:1px solid rgba(212,175,55,.15);border-radius:12px;overflow:hidden}
+@media(max-width:700px){.integration-flow{grid-template-columns:1fr 1fr}}
+.flow-step{padding:2rem 1.5rem;text-align:center;border-right:1px solid rgba(212,175,55,.1);position:relative}
+.flow-step:last-child{border-right:none}
+@media(max-width:700px){.flow-step:nth-child(2){border-right:none}.flow-step:nth-child(3){border-right:1px solid rgba(212,175,55,.1)}.flow-step:nth-child(2),.flow-step:nth-child(3){border-top:1px solid rgba(212,175,55,.1)}.flow-step:nth-child(4){border-top:1px solid rgba(212,175,55,.1);border-right:none}}
+.flow-num{font-family:var(--f-display);font-size:2.5rem;font-weight:700;color:rgba(212,175,55,.2);line-height:1;margin-bottom:.6rem}
+.flow-step h5{font-family:var(--f-caps);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-white);margin-bottom:.4rem}
+.flow-step p{font-size:.8rem;color:var(--c-text-muted);line-height:1.6}
+.benefit-list{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.benefit-item{display:flex;gap:1.2rem;align-items:start;padding:1.2rem 1.5rem;background:var(--c-dark2);border:1px solid rgba(212,175,55,.1);border-radius:8px;transition:var(--transition)}
+.benefit-item:hover{border-color:rgba(212,175,55,.35);transform:translateX(4px)}
+.bi-icon{font-size:1.5rem;flex-shrink:0;margin-top:.1rem}
+.benefit-item h5{color:var(--c-white);font-size:.95rem;font-weight:600;margin-bottom:.3rem}
+.benefit-item p{font-size:.88rem;color:var(--c-text-muted);line-height:1.65}
+.roles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+@media(max-width:700px){.roles-grid{grid-template-columns:1fr 1fr}}
+.role-card{background:var(--c-dark2);border:1px solid rgba(212,175,55,.1);border-radius:8px;padding:1.5rem;text-align:center;transition:var(--transition)}
+.role-card:hover{border-color:rgba(212,175,55,.4);transform:translateY(-3px)}
+.role-icon{font-size:2rem;margin-bottom:.8rem}
+.role-card h4{font-family:var(--f-caps);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-gold);margin-bottom:.4rem}
+.role-card p{font-size:.82rem;color:var(--c-text-muted);line-height:1.6}
+.cta-strip{background:linear-gradient(135deg,var(--c-dark2),rgba(212,175,55,.06));border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:3.5rem;text-align:center}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a href="index.html" class="logo-wrap"><img src="images/logo-escudo.png.png" alt="PRIORISK"></a>
+  <nav><ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li>
+    <li><a href="metodologia.html">Metodología</a></li><li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="inteligencia.html">Inteligencia</a></li><li><a href="hse.html" class="active">HSE</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul></nav>
+  <div class="header-cta">
+    <a href="cotizacion.html" class="btn btn-outline">Cotizador</a>
+    <a href="https://wa.me/573219057059" target="_blank" class="btn btn-gold">WhatsApp</a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</div></header>
+
+<section class="page-hero"><div class="container page-hero-content">
+  <p class="eyebrow">Integración Corporativa</p>
+  <h1>Riesgo Ejecutivo<br><em>integrado a su sistema HSE</em></h1>
+  <div class="gold-line"></div>
+  <p>El análisis de riesgo personal del ejecutivo no es aislado: hace parte del marco de gestión de riesgo corporativo. PRIORISK diseña sus entregables para integrarse con sus sistemas HSE, BCP y ERM existentes.</p>
+</div></section>
+
+<!-- INTRO -->
+<section class="section"><div class="container">
+  <div class="hse-intro-grid">
+    <div>
+      <p class="eyebrow">El Puente que Faltaba</p>
+      <h2>Cuando el riesgo ejecutivo<br><em>se gestiona de forma aislada</em></h2>
+      <div class="gold-line"></div>
+      <p style="margin-bottom:1rem">La mayoría de las empresas tienen sistemas robustos de gestión HSE y continuidad del negocio, pero tratan el riesgo personal del ejecutivo como un asunto completamente separado.</p>
+      <p style="margin-bottom:1rem">Esta desconexión genera brechas: incidentes que afectan al directivo no están contemplados en el BCP, el riesgo personal no alimenta el mapa de riesgo corporativo, y los esquemas de protección se contratan sin criterio técnico integrado.</p>
+      <p><strong style="color:var(--c-gold)">PRIORISK cierra esa brecha</strong>. Nuestros análisis están diseñados para articularse con los marcos de gestión de riesgo que su organización ya utiliza.</p>
+    </div>
+    <div>
+      <div style="background:var(--c-dark2);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:2rem">
+        <p style="font-family:var(--f-caps);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--c-gold);margin-bottom:1.5rem">Marcos de Referencia Compatibles</p>
+        <div style="display:flex;flex-direction:column;gap:.8rem">
+          <div style="display:flex;align-items:center;gap:1rem;padding:.8rem;background:rgba(255,255,255,.03);border-radius:6px;border:1px solid rgba(212,175,55,.08)">
+            <span style="font-size:1.4rem">📋</span>
+            <div><div style="color:var(--c-white);font-weight:600;font-size:.95rem">ISO 31000</div><div style="color:var(--c-text-muted);font-size:.8rem">Gestión del Riesgo — Principios y Directrices</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:.8rem;background:rgba(255,255,255,.03);border-radius:6px;border:1px solid rgba(212,175,55,.08)">
+            <span style="font-size:1.4rem">🛡️</span>
+            <div><div style="color:var(--c-white);font-weight:600;font-size:.95rem">ISO 45001 / OHSAS</div><div style="color:var(--c-text-muted);font-size:.8rem">Seguridad y Salud en el Trabajo</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:.8rem;background:rgba(255,255,255,.03);border-radius:6px;border:1px solid rgba(212,175,55,.08)">
+            <span style="font-size:1.4rem">🔄</span>
+            <div><div style="color:var(--c-white);font-weight:600;font-size:.95rem">ISO 22301</div><div style="color:var(--c-text-muted);font-size:.8rem">Continuidad del Negocio (BCP/BCM)</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:.8rem;background:rgba(255,255,255,.03);border-radius:6px;border:1px solid rgba(212,175,55,.08)">
+            <span style="font-size:1.4rem">📊</span>
+            <div><div style="color:var(--c-white);font-weight:600;font-size:.95rem">COSO ERM</div><div style="color:var(--c-text-muted);font-size:.8rem">Enterprise Risk Management Framework</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:.8rem;background:rgba(255,255,255,.03);border-radius:6px;border:1px solid rgba(212,175,55,.08)">
+            <span style="font-size:1.4rem">🌐</span>
+            <div><div style="color:var(--c-white);font-weight:600;font-size:.95rem">ANSI/ASIS PSC.1</div><div style="color:var(--c-text-muted);font-size:.8rem">Security Management Standard</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- FRAMEWORKS -->
+<section class="section-sm" style="background:var(--c-dark2)"><div class="container">
+  <p class="eyebrow">Áreas de Integración</p>
+  <h2>Cómo se Integra PRIORISK</h2>
+  <div class="gold-line"></div>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="fw-icon">⚙️</div>
+      <h4>Integración con HSE</h4>
+      <p>El análisis de riesgo físico del ejecutivo se incorpora como un componente del mapa de riesgo HSE corporativo. Los protocolos de respuesta a emergencias incluyen escenarios de incidentes de seguridad personal.</p>
+      <span class="fw-tag">ISO 45001</span>
+    </div>
+    <div class="fw-card">
+      <div class="fw-icon">🔄</div>
+      <h4>Continuidad del Negocio (BCP)</h4>
+      <p>Identificamos cómo la incapacitación, secuestro o ausencia forzada del ejecutivo afecta la continuidad operativa, y diseñamos protocolos de respuesta integrados al BCP existente.</p>
+      <span class="fw-tag">ISO 22301</span>
+    </div>
+    <div class="fw-card">
+      <div class="fw-icon">📊</div>
+      <h4>Gestión de Riesgo Corporativo (ERM)</h4>
+      <p>Los hallazgos de PRIORISK se expresan en el lenguaje de los marcos ERM corporativos: categorías de riesgo, scoring, matrices de calor y registros de riesgo compatibles con los sistemas existentes.</p>
+      <span class="fw-tag">COSO ERM</span>
+    </div>
+    <div class="fw-card">
+      <div class="fw-icon">🛡️</div>
+      <h4>Planes de Seguridad Corporativa</h4>
+      <p>Coordinación técnica con el Jefe de Seguridad (CSO) o Director HSE para que los protocolos de protección ejecutiva sean coherentes con las políticas de seguridad de la organización.</p>
+      <span class="fw-tag">Corporativo</span>
+    </div>
+    <div class="fw-card">
+      <div class="fw-icon">📋</div>
+      <h4>Due Diligence y Auditorías</h4>
+      <p>Para procesos de fusión, adquisición o auditoría corporativa, PRIORISK puede evaluar el perfil de riesgo personal de directivos clave como parte del proceso de due diligence de seguridad.</p>
+      <span class="fw-tag">M&A</span>
+    </div>
+    <div class="fw-card">
+      <div class="fw-icon">🎓</div>
+      <h4>Capacitación de Equipos HSE</h4>
+      <p>Sesiones de transferencia de conocimiento para equipos de seguridad y HSE sobre metodologías de análisis de riesgo ejecutivo, protocolos de respuesta y mejores prácticas internacionales.</p>
+      <span class="fw-tag">Training</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- FLUJO -->
+<section class="section"><div class="container">
+  <p class="eyebrow">Proceso de Integración</p>
+  <h2>Cómo trabajamos con su equipo</h2>
+  <div class="gold-line"></div>
+  <div class="integration-flow">
+    <div class="flow-step"><div class="flow-num">01</div><h5>Revisión de Marco Existente</h5><p>Analizamos el sistema HSE, BCP y ERM actual para identificar gaps de riesgo ejecutivo</p></div>
+    <div class="flow-step"><div class="flow-num">02</div><h5>Diagnóstico Ejecutivo</h5><p>Aplicamos la metodología PRIORISK al perfil del directivo o equipo objetivo</p></div>
+    <div class="flow-step"><div class="flow-num">03</div><h5>Entregables Integrados</h5><p>Los informes se estructuran para incorporarse directamente al mapa de riesgo corporativo</p></div>
+    <div class="flow-step"><div class="flow-num">04</div><h5>Transferencia y Soporte</h5><p>Sesión con el equipo HSE/Seguridad para asegurar la correcta implementación</p></div>
+  </div>
+</div></section>
+
+<!-- BENEFICIOS -->
+<section class="section-sm" style="background:var(--c-dark2)"><div class="container">
+  <p class="eyebrow">Valor para la Organización</p>
+  <h2>Beneficios de la Integración</h2>
+  <div class="gold-line"></div>
+  <div class="benefit-list">
+    <div class="benefit-item"><div class="bi-icon">🎯</div><div><h5>Visión Integrada del Riesgo</h5><p>El riesgo personal del ejecutivo deja de ser un punto ciego en el mapa de riesgo corporativo. La organización tiene una imagen completa de su exposición.</p></div></div>
+    <div class="benefit-item"><div class="bi-icon">📉</div><div><h5>Reducción de Costos por Incidente</h5><p>La prevención basada en diagnóstico tiene un costo significativamente menor que la respuesta a una crisis: rescate, sustitución ejecutiva, interrupción operacional y daño reputacional.</p></div></div>
+    <div class="benefit-item"><div class="bi-icon">⚖️</div><div><h5>Cumplimiento y Deber de Cuidado</h5><p>Las organizaciones tienen un deber de cuidado (duty of care) hacia sus ejecutivos. Un diagnóstico profesional documenta el cumplimiento de este estándar ante terceros y aseguradoras.</p></div></div>
+    <div class="benefit-item"><div class="bi-icon">🔄</div><div><h5>Continuidad Operacional Reforzada</h5><p>Al integrar los escenarios de riesgo ejecutivo al BCP, la organización está preparada para mantener operaciones ante la ausencia forzada de un directivo clave.</p></div></div>
+    <div class="benefit-item"><div class="bi-icon">🤝</div><div><h5>Coordinación Sin Fricción</h5><p>Los entregables de PRIORISK están diseñados para el lenguaje y los formatos que usan los equipos HSE, eliminando la necesidad de traducción o adaptación posterior.</p></div></div>
+  </div>
+</div></section>
+
+<!-- INTERLOCUTORES -->
+<section class="section"><div class="container">
+  <p class="eyebrow">Interlocutores Corporativos</p>
+  <h2>Con quién trabajamos en su organización</h2>
+  <div class="gold-line"></div>
+  <div class="roles-grid">
+    <div class="role-card"><div class="role-icon">⚙️</div><h4>Director HSE</h4><p>Integración de hallazgos al sistema de gestión de seguridad y salud ocupacional</p></div>
+    <div class="role-card"><div class="role-icon">🛡️</div><h4>Chief Security Officer</h4><p>Alineación de protocolos de protección ejecutiva con la política de seguridad corporativa</p></div>
+    <div class="role-card"><div class="role-icon">📊</div><h4>Risk Manager / CRO</h4><p>Incorporación del riesgo ejecutivo al mapa de riesgo corporativo y registro ERM</p></div>
+    <div class="role-card"><div class="role-icon">🔄</div><h4>BCP / Continuidad</h4><p>Diseño de escenarios de respuesta ante incidentes que involucren al directivo</p></div>
+    <div class="role-card"><div class="role-icon">👔</div><h4>CEO / Junta Directiva</h4><p>Presentación ejecutiva de hallazgos y decisiones estratégicas de protección</p></div>
+    <div class="role-card"><div class="role-icon">⚖️</div><h4>Gerente Legal / Compliance</h4><p>Documentación del deber de cuidado y cumplimiento de estándares de seguridad</p></div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="section-sm"><div class="container">
+  <div class="cta-strip">
+    <h2 style="margin-bottom:1rem">¿Su sistema HSE incluye el riesgo personal del ejecutivo?</h2>
+    <p style="max-width:500px;margin:0 auto 2rem;color:var(--c-text-muted)">Evaluamos su marco actual e identificamos la forma óptima de integración. Consulta técnica confidencial sin costo.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="contacto.html" class="btn btn-gold">Solicitar Consulta Técnica</a>
+      <a href="servicios.html" class="btn btn-outline">Ver Servicios</a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><img src="images/logo-escudo.png.png" alt="PRIORISK"><p>Diagnóstico Estratégico de Riesgo y Protección Ejecutiva. Colombia.</p></div>
+    <div class="footer-col"><h5>Servicios</h5><ul><li><a href="servicios.html">Portafolio</a></li><li><a href="cotizacion.html">Cotizador</a></li></ul></div>
+    <div class="footer-col"><h5>Empresa</h5><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="metodologia.html">Metodología</a></li></ul></div>
+    <div class="footer-col"><h5>Contacto</h5><ul><li><a href="/cdn-cgi/l/email-protection#cfaca0a1bbaeacbba08fbfbda6a0bda6bca4e1aca0a2"><span class="__cf_email__" data-cfemail="cba8a4a5bfaaa8bfa48bbbb9a2a4b9a2b8a0e5a8a4a6">[email&#160;protected]</span></a></li><li><a href="https://wa.me/573219057059">+57 321 905 7059</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 PRIORISK Consulting Group</span><span>Todos los derechos reservados</span></div>
+</div></footer>
+<div class="wa-float"><a href="https://wa.me/573219057059" target="_blank" class="wa-btn" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.737 5.607 2.137 8.048L0 32l8.133-2.127A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.287 13.287 0 01-6.787-1.854l-.487-.293-4.587 1.227 1.227-4.587-.293-.487A13.287 13.287 0 012.667 16C2.667 8.9 8.9 2.667 16 2.667S29.333 8.9 29.333 16 23.1 29.333 16 29.333zm7.3-9.867c-.373-.187-2.2-1.093-2.547-1.213-.347-.12-.6-.187-.853.187s-.973 1.213-1.187 1.467c-.213.253-.427.28-.8.093s-1.573-.587-2.993-1.867c-1.107-.987-1.853-2.213-2.067-2.587s-.02-.573.16-.76c.167-.167.373-.44.56-.653s.253-.373.373-.627c.12-.253.06-.467-.027-.653s-.853-2.053-1.16-2.813c-.307-.733-.613-.587-.84-.587-.213 0-.467-.027-.72-.027s-.653.093-.993.467-1.307 1.293-1.307 3.147 1.373 3.68 1.56 3.933 2.653 4.073 6.453 5.707c.9.373 1.6.59
