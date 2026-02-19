@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Metodología PRIORISK | Análisis Multidimensional de Riesgos</title>
+<meta name="description" content="Metodología PRIORISK de 4 fases: Identificación de Activos, Análisis AVI, Evaluación de Riesgo y Recomendaciones Estratégicas. OSINT, HUMINT e inteligencia aplicada.">
+<link rel="icon" href="images/logo-escudo.png.png">
+<link rel="stylesheet" href="_base.css">
+<style>
+.timeline { position:relative; margin-top:4rem; }
+.timeline-line { position:absolute; left:52px; top:36px; bottom:0; width:2px; background:linear-gradient(to bottom, var(--color-accent), rgba(212,175,55,0.1)); }
+@media(max-width:600px){ .timeline-line{display:none;} }
+.tl-block { display:grid; grid-template-columns:104px 1fr; gap:2.5rem; margin-bottom:3rem; align-items:start; }
+@media(max-width:600px){ .tl-block{grid-template-columns:1fr;} }
+.tl-num-wrap { display:flex; flex-direction:column; align-items:center; gap:0.5rem; position:relative; z-index:1; }
+.tl-circle { width:72px; height:72px; border-radius:50%; background:var(--color-bg-dark); border:2px solid var(--color-accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-secondary); font-size:1.8rem; font-weight:700; color:var(--color-accent); box-shadow:0 0 0 6px var(--color-bg-dark); }
+.tl-label { font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.4); }
+.tl-deliverables { margin-top:1.2rem; display:flex; flex-wrap:wrap; gap:0.4rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.07); }
+.tl-del { font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent); background:rgba(212,175,55,0.07); border:1px solid rgba(212,175,55,0.2); padding:0.2rem 0.65rem; border-radius:100px; }
+
+.tools-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; margin-top:2.5rem; }
+@media(max-width:800px){ .tools-grid{grid-template-columns:1fr 1fr;} }
+.tool-card { background:rgba(26,26,26,0.9); border:1px solid rgba(212,175,55,0.12); border-radius:8px; padding:1.5rem; text-align:center; transition:var(--transition); }
+.tool-card:hover { border-color:rgba(212,175,55,0.4); transform:translateY(-3px); }
+.tool-icon { font-size:2rem; margin-bottom:0.8rem; }
+.tool-card h4 { color:var(--color-accent); font-size:0.85rem; margin-bottom:0.4rem; }
+.tool-card p  { font-size:0.83rem; opacity:0.6; }
+
+.principles-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
+@media(max-width:700px){ .principles-grid{grid-template-columns:1fr;} }
+.principle { border-left:3px solid var(--color-accent); padding:1.5rem 1.5rem 1.5rem 1.8rem; background:rgba(26,26,26,0.8); border-radius:0 8px 8px 0; }
+.principle h4 { color:var(--color-accent); margin-bottom:0.6rem; font-size:0.95rem; }
+.principle p  { font-size:0.9rem; opacity:0.7; }
+</style>
+</head>
+<body>
+<header class="header">
+  <nav class="nav-container">
+    <a href="index.html" class="logo-header"><img src="images/logo-escudo.png.png" alt="PRIORISK"></a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="metodologia.html" class="active">Metodología</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="inteligencia.html">Inteligencia</a></li>
+      <li><a href="hse.html">HSE</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="cotizacion.html" class="btn btn-secondary" style="padding:0.6rem 1.5rem;font-size:0.88rem;">Cotizar</a>
+      <a href="https://wa.me/573219057059" target="_blank" class="btn btn-primary" style="padding:0.6rem 1.5rem;font-size:0.88rem;">WhatsApp</a>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container-sm">
+    <div class="breadcrumb"><a href="index.html">Inicio</a><span>›</span><span>Metodología</span></div>
+    <div class="hero-badge">Proceso y Rigor Técnico</div>
+    <h1>Metodología PRIORISK:<br>Análisis Multidimensional</h1>
+    <div class="gold-line" style="max-width:80px;margin:1.5rem 0;"></div>
+    <p style="font-size:1.15rem;max-width:580px;opacity:0.9;">Un proceso técnico, riguroso y sistemático que transforma la inteligencia de contexto en decisiones de protección fundamentadas en evidencia, no en suposiciones.</p>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <h2 class="text-center">Tres Principios Rectores</h2>
+    <div class="principles-grid">
+      <div class="principle"><h4>Diagnóstico Antes de Prescripción</h4><p>Ninguna medida de protección se recomienda sin haber completado el análisis de riesgo. El diagnóstico siempre precede a la solución.</p></div>
+      <div class="principle"><h4>Evidencia sobre Percepción</h4><p>Las decisiones se fundamentan en datos de inteligencia verificables, no en percepciones subjetivas ni en estándares genéricos del sector de seguridad.</p></div>
+      <div class="principle"><h4>Confidencialidad Irrestricta</h4><p>Todo el proceso opera bajo estrictos protocolos de seguridad de la información. Los informes son entregados exclusivamente al cliente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="text-center">Cuatro Fases de Análisis</h2>
+    <p class="text-center mb-lg" style="max-width:560px;margin-left:auto;margin-right:auto;opacity:0.8;">Cada fase es secuencial e interdependiente. Los hallazgos de cada etapa alimentan y refinan la siguiente.</p>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="tl-block anim-up anim-d1">
+        <div class="tl-num-wrap"><div class="tl-circle">01</div><span class="tl-label">Fase I</span></div>
+        <div class="card">
+          <h3>Identificación de Activos Críticos</h3>
+          <p>Definimos con precisión qué y quién debe ser protegido, y por qué. Evaluación del perfil del ejecutivo: rol, exposición pública, historial de incidentes, relaciones de riesgo y relevancia estratégica para la organización.</p>
+          <p style="opacity:0.7;">Incluye caracterización del entorno inmediato: equipo de trabajo, familia, residencias, rutinas de desplazamiento y contexto sectorial.</p>
+          <div class="tl-deliverables"><span class="tl-del">Perfil de Activo</span><span class="tl-del">Mapa de Relaciones</span><span class="tl-del">Contexto Sectorial</span></div>
+        </div>
+      </div>
+
+      <div class="tl-block anim-up anim-d2">
+        <div class="tl-num-wrap"><div class="tl-circle">02</div><span class="tl-label">Fase II</span></div>
+        <div class="card">
+          <h3>Análisis de Amenaza, Vulnerabilidad e Impacto</h3>
+          <p>Evaluación sistemática de amenazas reales del entorno mediante inteligencia OSINT, análisis de fuentes abiertas, revisión de incidentes similares e indicadores de riesgo geopolítico y sectorial.</p>
+          <p style="opacity:0.7;">Identificación y clasificación de vulnerabilidades técnicas, conductuales y organizacionales. Estimación del impacto potencial en escenarios de materialización del riesgo.</p>
+          <div class="tl-deliverables"><span class="tl-del">Catálogo de Amenazas</span><span class="tl-del">Mapa de Vulnerabilidades</span><span class="tl-del">Análisis de Impacto</span><span class="tl-del">OSINT Report</span></div>
+        </div>
+      </div>
+
+      <div class="tl-block anim-up anim-d3">
+        <div class="tl-num-wrap"><div class="tl-circle">03</div><span class="tl-label">Fase III</span></div>
+        <div class="card">
+          <h3>Evaluación y Priorización del Riesgo</h3>
+          <p>Construcción de la Matriz de Riesgo Ejecutivo mediante ponderación de probabilidad de ocurrencia vs. impacto potencial. Los riesgos se clasifican en cuatro cuadrantes: crítico, alto, medio y bajo.</p>
+          <p style="opacity:0.7;">Esta matriz es la herramienta central para la toma de decisiones y orienta la asignación eficiente de recursos de protección.</p>
+          <div class="tl-deliverables"><span class="tl-del">Matriz de Riesgo</span><span class="tl-del">Priorización</span><span class="tl-del">Nivel de Exposición</span></div>
+        </div>
+      </div>
+
+      <div class="tl-block anim-up anim-d4">
+        <div class="tl-num-wrap"><div class="tl-circle">04</div><span class="tl-label">Fase IV</span></div>
+        <div class="card">
+          <h3>Recomendaciones Estratégicas</h3>
+          <p>Diseño del plan de acción específico: medidas técnicas, organizacionales y conductuales proporcionales al nivel de riesgo validado. Cada recomendación incluye justificación técnica, prioridad y criterios de éxito.</p>
+          <p style="opacity:0.7;">Entrega de informe ejecutivo confidencial, presentación al cliente y soporte en la fase inicial de implementación.</p>
+          <div class="tl-deliverables"><span class="tl-del">Plan de Acción</span><span class="tl-del">Roadmap</span><span class="tl-del">Informe Ejecutivo</span><span class="tl-del">Briefing</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <h2 class="text-center">Herramientas y Fuentes</h2>
+    <p class="text-center mb-md" style="opacity:0.8;">Inteligencia aplicada con metodología rigurosa.</p>
+    <div class="tools-grid">
+      <div class="tool-card"><div class="tool-icon">🌐</div><h4>OSINT</h4><p>Inteligencia de fuentes abiertas: medios, registros públicos, redes sociales y bases de datos.</p></div>
+      <div class="tool-card"><div class="tool-icon">👥</div><h4>HUMINT</h4><p>Inteligencia humana: entrevistas estructuradas y análisis de fuentes de contacto.</p></div>
+      <div class="tool-card"><div class="tool-icon">🗺️</div><h4>Geoanálisis</h4><p>Mapeo de rutas, puntos críticos y análisis geoespacial de vulnerabilidades.</p></div>
+      <div class="tool-card"><div class="tool-icon">📊</div><h4>Risk Scoring</h4><p>Modelos de ponderación probabilidad × impacto alineados con ISO 31000.</p></div>
+      <div class="tool-card"><div class="tool-icon">🔍</div><h4>Análisis Conductual</h4><p>Evaluación de patrones de comportamiento que generan ventanas de vulnerabilidad.</p></div>
+      <div class="tool-card"><div class="tool-icon">🌍</div><h4>Inteligencia Geopolítica</h4><p>Monitoreo de variables macroestructurales que afectan el perfil de riesgo.</p></div>
+      <div class="tool-card"><div class="tool-icon">💻</div><h4>OSINT Digital</h4><p>Huella digital, exposición en línea y vulnerabilidades en comunicaciones.</p></div>
+      <div class="tool-card"><div class="tool-icon">📋</div><h4>ISO 31000</h4><p>Alineación con estándares internacionales de gestión de riesgo corporativo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="accent-box text-center">
+      <h3 style="color:var(--color-accent-light);margin-bottom:1rem;">¿Quiere ver esta metodología aplicada a su caso?</h3>
+      <p style="max-width:480px;margin:0 auto 2rem;">Una consulta inicial es confidencial y sin compromiso. Evaluamos si PRIORISK puede agregar valor a su situación específica.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contacto.html" class="btn btn-primary">Agendar Consulta</a>
+        <a href="servicios.html" class="btn btn-secondary">Ver Servicios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-content">
+  <div class="footer-grid">
+    <div class="footer-col"><img src="images/logo-escudo.png.png" alt="PRIORISK" style="height:40px;margin-bottom:1rem;"><p>Diagnóstico Estratégico de Riesgo y Protección Ejecutiva. Colombia.</p></div>
+    <div class="footer-col"><h4>Servicios</h4><ul><li><a href="servicios.html">Portafolio</a></li><li><a href="cotizacion.html">Cotizador</a></li></ul></div>
+    <div class="footer-col"><h4>Empresa</h4><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="hse.html">Integración HSE</a></li></ul></div>
+    <div class="footer-col"><h4>Contacto</h4><ul><li><a href="/cdn-cgi/l/email-protection#395a56574d585a4d5679494b50564b504a52175a5654"><span class="__cf_email__" data-cfemail="8ae9e5e4feebe9fee5cafaf8e3e5f8e3f9e1a4e9e5e7">[email&#160;protected]</span></a></li><li><a href="https://wa.me/573219057059">+57 321 905 7059</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 PRIORISK Consulting Group</span><span>Todos los derechos reservados</span></div>
+</div></footer>
+<div class="whatsapp-float"><a href="https://wa.me/573219057059" target="_blank" class="whatsapp-button"><svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.737 5.607 2.137 8.048L0 32l8.133-2.127A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.3 13.3 0 01-6.787-1.854l-.487-.293-4.587 1.227 1.227-4.587-.293-.487A13.3 13.3 0 012.667 16C2.667 8.9 8.9 2.667 16 2.667S29.333 8.9 29.333 16 23.1 29.333 16 29.333zm7.3-9.867c-.373-.187-2.2-1.093-2.547-1.213s-.6-.187-.853.187-.973 1.213-1.187 1.467-.427.28-.8.093-1.573-.587-2.993-1.867c-1.107-.987-1.853-2.213-2.067-2.587s-.022-.563.161-.746.365-.44.56-.653.243-.373.373-.627.06-.467-.027-.653-.853-2.053-1.16-2.813-.613-.587-.84-.587c-.213 0-.467-.027-.72-.027s-.653.093-.993.467-1.307 1.293-1.307 3.147 1.373 3.68 1.56 3.933 2.653 4.073 6.453 5.707c.9.373 1.6.59
