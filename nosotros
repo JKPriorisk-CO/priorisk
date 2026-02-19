@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Quiénes Somos | PRIORISK Consulting Group</title>
+<meta name="description" content="PRIORISK: firma de análisis estratégico de riesgo y protección ejecutiva en Colombia. Sin conflicto de interés. Criterio técnico. Confidencialidad absoluta.">
+<link rel="icon" href="images/logo-escudo.png.png">
+<link rel="stylesheet" href="shared.css">
+<style>
+.about-split{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+@media(max-width:800px){.about-split{grid-template-columns:1fr;gap:2.5rem}}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:3rem 0}
+@media(max-width:580px){.stat-row{grid-template-columns:1fr 1fr}}
+.stat-box{text-align:center;padding:2.2rem 1rem;background:var(--c-dark2);border:1px solid rgba(212,175,55,.15);border-radius:12px;transition:var(--transition)}
+.stat-box:hover{border-color:rgba(212,175,55,.4);transform:translateY(-4px)}
+.stat-num{font-family:var(--f-display);font-size:3.2rem;font-weight:700;color:var(--c-gold);line-height:1}
+.stat-label{font-family:var(--f-caps);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--c-text-muted);margin-top:.7rem}
+.value-list{list-style:none;display:flex;flex-direction:column;gap:1.4rem;margin-top:2rem}
+.value-list li{display:flex;gap:1.2rem;align-items:start}
+.vdot{width:8px;height:8px;border-radius:50%;background:var(--c-gold);margin-top:.6rem;flex-shrink:0}
+.value-list h5{font-family:var(--f-caps);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-gold);margin-bottom:.4rem}
+.value-list p{font-size:.92rem;color:var(--c-text-muted);line-height:1.75}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+@media(max-width:600px){.diff-grid{grid-template-columns:1fr}}
+.diff-item{background:var(--c-dark2);border:1px solid rgba(212,175,55,.1);border-radius:8px;padding:1.8rem;transition:var(--transition)}
+.diff-item:hover{border-color:rgba(212,175,55,.4);transform:translateY(-3px)}
+.diff-item h4{color:var(--c-gold);margin-bottom:.6rem;font-size:.9rem}
+.diff-item p{font-size:.91rem;color:var(--c-text-muted);line-height:1.75}
+.cta-strip{background:linear-gradient(135deg,var(--c-dark2),rgba(212,175,55,.06));border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:3.5rem;text-align:center}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a href="index.html" class="logo-wrap"><img src="images/logo-escudo.png.png" alt="PRIORISK"></a>
+  <nav><ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li>
+    <li><a href="metodologia.html">Metodología</a></li><li><a href="nosotros.html" class="active">Nosotros</a></li>
+    <li><a href="inteligencia.html">Inteligencia</a></li><li><a href="hse.html">HSE</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul></nav>
+  <div class="header-cta">
+    <a href="cotizacion.html" class="btn btn-outline">Cotizador</a>
+    <a href="https://wa.me/573219057059" target="_blank" class="btn btn-gold">WhatsApp</a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</div></header>
+
+<section class="page-hero"><div class="container page-hero-content">
+  <p class="eyebrow">La Firma</p>
+  <h1>Quiénes<br><em>Somos</em></h1>
+  <div class="gold-line"></div>
+  <p>Una firma especializada, discreta y técnicamente rigurosa. Nacimos para resolver el problema que las empresas de seguridad tradicional no pueden resolver: analizar el riesgo real antes de proteger.</p>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="about-split">
+    <div>
+      <p class="eyebrow">Nuestra Esencia</p>
+      <h2>No vendemos seguridad.<br><em>Comprendemos el riesgo.</em></h2>
+      <div class="gold-line"></div>
+      <p style="margin-bottom:1rem">En PRIORISK partimos de una convicción: la mayoría de las decisiones de protección ejecutiva se toman sin información suficiente. Se compran soluciones antes de entender el problema.</p>
+      <p style="margin-bottom:1rem">Somos analistas de inteligencia y riesgo que trabajamos exclusivamente con alta dirección, familias empresarias y organizaciones con exposición crítica.</p>
+      <p>No tenemos conflicto de interés: <strong style="color:var(--c-gold)">no vendemos escoltas, cámaras ni sistemas de seguridad</strong>. Solo análisis, criterio técnico y recomendaciones fundamentadas.</p>
+    </div>
+    <div>
+      <ul class="value-list">
+        <li><div class="vdot"></div><div><h5>Confidencialidad Irrestricta</h5><p>Ningún caso, cliente o hallazgo se menciona fuera del vínculo contractual. Los informes no tienen copias adicionales.</p></div></li>
+        <li><div class="vdot"></div><div><h5>Independencia Técnica</h5><p>Sin alianzas con proveedores de seguridad. Nuestra única lealtad es con la precisión del análisis y los intereses del cliente.</p></div></li>
+        <li><div class="vdot"></div><div><h5>Rigor Metodológico</h5><p>Cada análisis sigue el mismo proceso de cuatro fases, sin atajos ni conclusiones preconcebidas.</p></div></li>
+        <li><div class="vdot"></div><div><h5>Exclusividad Selectiva</h5><p>No atendemos el público general. Seleccionamos los casos que podemos resolver con excelencia técnica real.</p></div></li>
+      </ul>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-num">100%</div><div class="stat-label">Análisis antes de cualquier protección</div></div>
+    <div class="stat-box"><div class="stat-num">0</div><div class="stat-label">Conflictos de interés con proveedores</div></div>
+    <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Fases de análisis multidimensional</div></div>
+  </div>
+</div></section>
+
+<section class="section-sm" style="background:var(--c-dark2)"><div class="container">
+  <p class="eyebrow">Por qué Elegirnos</p>
+  <h2>Diferenciadores PRIORISK</h2>
+  <div class="gold-line"></div>
+  <div class="diff-grid">
+    <div class="diff-item"><h4>Diagnóstico Primero, Siempre</h4><p>En la industria, la norma es vender primero y justificar después. En PRIORISK el diagnóstico es el producto principal, no un pretexto para vender un esquema.</p></div>
+    <div class="diff-item"><h4>Inteligencia como Base Técnica</h4><p>Usamos metodologías OSINT, HUMINT y geoanálisis que no son estándar en el sector de seguridad ejecutiva convencional.</p></div>
+    <div class="diff-item"><h4>Sin Catálogos ni Paquetes</h4><p>No tenemos soluciones prediseñadas. Cada recomendación emerge del análisis del caso específico, no de un portafolio de productos.</p></div>
+    <div class="diff-item"><h4>Interlocutor de Alto Nivel</h4><p>Nos comunicamos con C-level y juntas directivas. Nuestros informes están escritos para quienes toman decisiones estratégicas.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container">
+  <p class="eyebrow">A Quién Servimos</p>
+  <h2>Perfil de Nuestros Clientes</h2>
+  <div class="gold-line"></div>
+  <div class="grid-3" style="margin-top:2rem">
+    <div class="card-dark"><span style="font-size:2rem;display:block;margin-bottom:1rem">👔</span><h4 style="color:var(--c-gold);margin-bottom:.5rem">Alta Dirección</h4><p style="font-size:.9rem;color:var(--c-text-muted)">CEOs, presidentes, directores generales y miembros de junta con alta exposición pública o perfil de riesgo elevado.</p></div>
+    <div class="card-dark"><span style="font-size:2rem;display:block;margin-bottom:1rem">🏢</span><h4 style="color:var(--c-gold);margin-bottom:.5rem">Familias Empresarias</h4><p style="font-size:.9rem;color:var(--c-text-muted)">Grupos familiares propietarios de empresas con relevancia sectorial o regional significativa.</p></div>
+    <div class="card-dark"><span style="font-size:2rem;display:block;margin-bottom:1rem">⚙️</span><h4 style="color:var(--c-gold);margin-bottom:.5rem">Ejecutivos Estratégicos</h4><p style="font-size:.9rem;color:var(--c-text-muted)">Directores con acceso a información sensible y toma de decisiones de alto impacto.</p></div>
+    <div class="card-dark"><span style="font-size:2rem;display:block;margin-bottom:1rem">⚖️</span><h4 style="color:var(--c-gold);margin-bottom:.5rem">Profesionales de Alto Perfil</h4><p style="font-size:.9rem;color:var(--c-text-muted)">Abogados, médicos, consultores y figuras públicas con exposición significativa en su sector.</p></div>
+    <div class="card-dark"><span style="font-size:2rem;display:block;margin-bottom:1rem">🏛️</span><h4 style="color:var(--c-gold);margin-bottom:.5rem">Sector Institucional</h4><p style="font-size:.9rem;color:var(--c-text-muted)">Directivos de entidades gubernamentales y organismos con perfil de riesgo específico.</p></div>
+    <div class="card-dark"><span style="font-size:2rem;display:block;margin-bottom:1rem">🌍</span><h4 style="color:var(--c-gold);margin-bottom:.5rem">Entornos Críticos</h4><p style="font-size:.9rem;color:var(--c-text-muted)">Ejecutivos que operan en zonas geográficas o sectores con niveles de riesgo estructuralmente elevados.</p></div>
+  </div>
+</div></section>
+
+<section class="section-sm"><div class="container">
+  <div class="cta-strip">
+    <h2 style="margin-bottom:1rem">¿Quiere conocer cómo trabajamos en su caso?</h2>
+    <p style="max-width:460px;margin:0 auto 2rem;color:var(--c-text-muted)">Una conversación inicial es confidencial, sin compromiso, y nos permite evaluar si somos el equipo adecuado para su situación.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="contacto.html" class="btn btn-gold">Agendar Consulta Confidencial</a>
+      <a href="metodologia.html" class="btn btn-outline">Conocer Metodología</a>
+    </div>
+  </div>
+</div></section>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><img src="images/logo-escudo.png.png" alt="PRIORISK"><p>Diagnóstico Estratégico de Riesgo y Protección Ejecutiva. Colombia.</p></div>
+    <div class="footer-col"><h5>Servicios</h5><ul><li><a href="servicios.html">Portafolio</a></li><li><a href="cotizacion.html">Cotizador</a></li></ul></div>
+    <div class="footer-col"><h5>Empresa</h5><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="metodologia.html">Metodología</a></li></ul></div>
+    <div class="footer-col"><h5>Contacto</h5><ul><li><a href="/cdn-cgi/l/email-protection#5a3935342e3b392e351a2a2833352833293174393537"><span class="__cf_email__" data-cfemail="b7d4d8d9c3d6d4c3d8f7c7c5ded8c5dec4dc99d4d8da">[email&#160;protected]</span></a></li><li><a href="https://wa.me/573219057059">+57 321 905 7059</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 PRIORISK Consulting Group</span><span>Todos los derechos reservados</span></div>
+</div></footer>
+<div class="wa-float"><a href="https://wa.me/573219057059" target="_blank" class="wa-btn" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="white"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.737 5.607 2.137 8.048L0 32l8.133-2.127A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.287 13.287 0 01-6.787-1.854l-.487-.293-4.587 1.227 1.227-4.587-.293-.487A13.287 13.287 0 012.667 16C2.667 8.9 8.9 2.667 16 2.667S29.333 8.9 29.333 16 23.1 29.333 16 29.333zm7.3-9.867c-.373-.187-2.2-1.093-2.547-1.213-.347-.12-.6-.187-.853.187s-.973 1.213-1.187 1.467c-.213.253-.427.28-.8.093s-1.573-.587-2.993-1.867c-1.107-.987-1.853-2.213-2.067-2.587s-.02-.573.16-.76c.167-.167.373-.44.56-.653s.253-.373.373-.627c.12-.253.06-.467-.027-.653s-.853-2.053-1.16-2.813c-.307-.733-.613-.587-.84-.587-.213 0-.467-.027-.72-.027s-.653.093-.993.467-1.307 1.293-1.307 3.147 1.373 3.68 1.56 3.933 2.653 4.073 6.453 5.707c.9.373 1.6.59
