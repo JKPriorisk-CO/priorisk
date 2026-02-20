@@ -248,108 +248,45 @@
         /* ========================================
            HERO SECTION
         ======================================== */
-        .hero {
-            background: 
-                linear-gradient(135deg, rgba(10, 10, 10, 0.92) 0%, rgba(26, 26, 26, 0.85) 50%, rgba(45, 45, 45, 0.88) 100%), 
-                url('images/fondo-hero.png.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--color-white);
-            padding: var(--spacing-xl) var(--spacing-md);
-            text-align: center;
-            position: relative;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 150px;
-            background: linear-gradient(to bottom, transparent, var(--color-bg-dark));
-            pointer-events: none;
-        }
-        
-        .hero-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-logo {
-            margin-bottom: var(--spacing-lg);
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        .hero-logo img {
-            max-width: 500px;
-            width: 90%;
-            height: auto;
-            filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.4));
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero-quote {
-            font-size: 1.4rem;
-            font-style: italic;
-            font-family: var(--font-secondary);
-            margin-bottom: var(--spacing-md);
-            opacity: 0.95;
-            border-left: 4px solid var(--color-accent);
-            padding-left: var(--spacing-md);
-            text-align: left;
-            display: inline-block;
-            color: var(--color-accent-light);
-            animation: fadeIn 1.2s ease-out 0.3s both;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .hero h1 {
-            color: var(--color-white);
-            margin-bottom: var(--spacing-md);
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-            animation: fadeIn 1.4s ease-out 0.5s both;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            margin-bottom: var(--spacing-lg);
-            opacity: 0.9;
-            animation: fadeIn 1.6s ease-out 0.7s both;
-        }
+       <section class="page-hero">
+    <div class="container-sm text-center">
+
+        <div class="eyebrow">Firma Boutique</div>
+
+        <h1>Análisis Estratégico<br>de Riesgo</h1>
+
+        <div class="gold-line"></div>
+
+        <p>
+            No vendemos seguridad. Comprendemos el riesgo antes de recomendar cualquier medida de protección.
+        </p>
+
+        <div style="margin-top:2.5rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+
+            <a href="servicios.html" class="btn btn-primary">
+                Servicios
+            </a>
+
+            <a href="cotizacion.html" class="btn btn-secondary">
+                Cotizar
+            </a>
+
+            <a href="metodologia.html" class="btn btn-secondary">
+                Metodología
+            </a>
+
+            <a href="inteligencia.html" class="btn btn-secondary">
+                Inteligencia
+            </a>
+
+            <a href="hse.html" class="btn btn-secondary">
+                HSE
+            </a>
+
+        </div>
+
+    </div>
+</section>
         
         /* ========================================
            BOTONES / CTAs
