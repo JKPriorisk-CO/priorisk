@@ -6,20 +6,26 @@
 <meta name="description" content="Portafolio completo de servicios PRIORISK: Diagnóstico Estratégico, Express, Riesgo Residencial, Análisis de Rutas, Esquemas de Protección y Acompañamiento Continuo.">
 <link rel="canonical" href="https://jkpriorisk-co.github.io/servicios">
 <link rel="icon" href="images/logo-escudo.png.png">
-<link rel="stylesheet" href="_base.css">
 <link rel="stylesheet" href="shared.css">
 <style>
-.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+/* Hero con imagen de fondo */
+.page-hero { position:relative; padding:6rem 0 4rem; overflow:hidden; }
+.page-hero::before { content:''; position:absolute; inset:0; background:url('images/executive-protection.jpg') center/cover; opacity:0.15; z-index:0; }
+.page-hero .container-sm { position:relative; z-index:1; }
+
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top:3rem; }
 @media(max-width:960px){ .services-grid{ grid-template-columns:1fr 1fr; } }
 @media(max-width:580px){ .services-grid{ grid-template-columns:1fr; } }
 
-.srv-card { position: relative; overflow: hidden; }
-.srv-card::before { content:''; position:absolute; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg,var(--color-accent),var(--color-accent-light)); transform:scaleX(0); transform-origin:left; transition:var(--transition); }
+.srv-card { position: relative; overflow: hidden; padding:2rem; }
+.srv-card::before { content:''; position:absolute; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg,#D4AF37,#F5C842); transform:scaleX(0); transform-origin:left; transition:all 0.3s; }
 .srv-card:hover::before { transform:scaleX(1); }
-.srv-num { font-family:var(--font-secondary); font-size:4rem; font-weight:700; color:rgba(212,175,55,0.08); line-height:1; margin-bottom:0.5rem; }
-.srv-icon { font-size:2.2rem; margin-bottom:1rem; }
-.srv-tags { margin-top:1.2rem; display:flex; flex-wrap:wrap; gap:0.4rem; }
-.srv-tag { font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent); border:1px solid rgba(212,175,55,0.3); padding:0.2rem 0.6rem; border-radius:100px; }
+.srv-num { font-family:Georgia,serif; font-size:3rem; font-weight:700; color:rgba(212,175,55,0.1); line-height:1; margin-bottom:1rem; }
+.srv-icon { font-size:2rem; margin-bottom:1.2rem; display:block; }
+.srv-card h3 { margin-bottom:1rem; font-size:1.15rem; }
+.srv-card p { line-height:1.8; margin-bottom:0.8rem; }
+.srv-tags { margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.5rem; }
+.srv-tag { font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color:#D4AF37; border:1px solid rgba(212,175,55,0.3); padding:0.25rem 0.7rem; border-radius:100px; background:rgba(212,175,55,0.05); }
 
 .compare-wrap { overflow-x:auto; margin-top:2rem; }
 .compare-table { width:100%; border-collapse:collapse; }
@@ -63,24 +69,27 @@
   </nav>
 </header>
 
-<section class="page-hero">
-  <div class="container-sm">
-    <div class="breadcrumb"><a href="index.html">Inicio</a><span>›</span><span>Servicios</span></div>
-    <div class="hero-badge">Portafolio Completo</div>
-    <h1>Servicios de<br>Protección Ejecutiva</h1>
-    <div class="gold-line" style="max-width:80px;margin:1.5rem 0;"></div>
-    <p style="font-size:1.15rem;max-width:580px;opacity:0.9;">Cada servicio está diseñado para un contexto de riesgo específico. No vendemos paquetes genéricos — diseñamos soluciones a partir del análisis técnico de su exposición real.</p>
-    <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;">
-      <a href="cotizacion.html" class="btn btn-primary">Cotizador Interactivo</a>
-      <a href="metodologia.html" class="btn btn-secondary">Ver Metodología</a>
+<section class="page-hero" style="min-height:60vh;display:flex;align-items:center">
+  <div class="container-sm" style="max-width:800px;text-align:center">
+    <div class="breadcrumb" style="justify-content:center;margin-bottom:1rem"><a href="index.html">Inicio</a><span>›</span><span>Servicios</span></div>
+    <div class="hero-badge" style="margin:0 auto 1.5rem">Portafolio Completo</div>
+    <h1 style="font-size:3rem;line-height:1.2;margin-bottom:1.5rem">Servicios de<br><em style="color:#D4AF37">Protección Ejecutiva</em></h1>
+    <div class="gold-line" style="max-width:80px;margin:1.5rem auto;height:3px;background:#D4AF37;"></div>
+    <p style="font-size:1.2rem;max-width:650px;margin:0 auto 2.5rem;line-height:1.8;opacity:0.9;">Cada servicio está diseñado para un contexto de riesgo específico. No vendemos paquetes genéricos — diseñamos soluciones a partir del análisis técnico de su exposición real.</p>
+    <div style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;">
+      <a href="cotizacion.html" class="btn btn-primary" style="padding:1rem 2.5rem;font-size:1.05rem">📊 Cotizador Interactivo</a>
+      <a href="metodologia.html" class="btn btn-secondary" style="padding:1rem 2rem;font-size:1.05rem">Ver Metodología</a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" style="padding:6rem 0">
   <div class="container">
-    <h2 class="text-center">Portafolio de Servicios</h2>
-    <p class="text-center mb-lg" style="max-width:600px;margin-left:auto;margin-right:auto;opacity:0.8;">Seis líneas de servicio que cubren el espectro completo de necesidades de protección ejecutiva, desde la evaluación inicial hasta el acompañamiento estratégico continuo.</p>
+    <div style="text-align:center;margin-bottom:4rem">
+      <h2 style="font-size:2.5rem;margin-bottom:1rem">Portafolio de Servicios</h2>
+      <p style="max-width:680px;margin:0 auto;font-size:1.1rem;opacity:0.85;line-height:1.8;">Seis líneas de servicio que cubren el espectro completo de necesidades de protección ejecutiva, desde la evaluación inicial hasta el acompañamiento estratégico continuo.</p>
+    </div>
+    
     <div class="services-grid">
       <div class="card srv-card anim-up anim-d1">
         <div class="srv-num">01</div>
