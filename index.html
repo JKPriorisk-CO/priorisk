@@ -11,7 +11,6 @@
     <meta name="author" content="PRIORISK Consulting Group">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jkpriorisk-co.github.io/">
-    <link rel="stylesheet" href="shared.css">
     
     <!-- OPEN GRAPH / FACEBOOK -->
     <meta property="og:type" content="website">
@@ -248,45 +247,108 @@
         /* ========================================
            HERO SECTION
         ======================================== */
-       <section class="page-hero">
-    <div class="container-sm text-center">
-
-        <div class="eyebrow">Firma Boutique</div>
-
-        <h1>Análisis Estratégico<br>de Riesgo</h1>
-
-        <div class="gold-line"></div>
-
-        <p>
-            No vendemos seguridad. Comprendemos el riesgo antes de recomendar cualquier medida de protección.
-        </p>
-
-        <div style="margin-top:2.5rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-
-            <a href="servicios.html" class="btn btn-primary">
-                Servicios
-            </a>
-
-            <a href="cotizacion.html" class="btn btn-secondary">
-                Cotizar
-            </a>
-
-            <a href="metodologia.html" class="btn btn-secondary">
-                Metodología
-            </a>
-
-            <a href="inteligencia.html" class="btn btn-secondary">
-                Inteligencia
-            </a>
-
-            <a href="hse.html" class="btn btn-secondary">
-                HSE
-            </a>
-
-        </div>
-
-    </div>
-</section>
+        .hero {
+            background: 
+                linear-gradient(135deg, rgba(10, 10, 10, 0.92) 0%, rgba(26, 26, 26, 0.85) 50%, rgba(45, 45, 45, 0.88) 100%), 
+                url('images/fondo-hero.png.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--color-white);
+            padding: var(--spacing-xl) var(--spacing-md);
+            text-align: center;
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to bottom, transparent, var(--color-bg-dark));
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-logo {
+            margin-bottom: var(--spacing-lg);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .hero-logo img {
+            max-width: 500px;
+            width: 90%;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.4));
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            font-family: var(--font-secondary);
+            margin-bottom: var(--spacing-md);
+            opacity: 0.95;
+            border-left: 4px solid var(--color-accent);
+            padding-left: var(--spacing-md);
+            text-align: left;
+            display: inline-block;
+            color: var(--color-accent-light);
+            animation: fadeIn 1.2s ease-out 0.3s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .hero h1 {
+            color: var(--color-white);
+            margin-bottom: var(--spacing-md);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            animation: fadeIn 1.4s ease-out 0.5s both;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+            animation: fadeIn 1.6s ease-out 0.7s both;
+        }
         
         /* ========================================
            BOTONES / CTAs
@@ -867,16 +929,16 @@
             
             <p class="hero-quote">"Antes de proteger, hay que entender el riesgo."</p>
             
-            <h1>Protección Ejecutiva Basada en Inteligencia Estratégica y Análisis Multidimensional de Riesgos</h1>
+            <h1>Protección Ejecutiva Basada en<br>Inteligencia Estratégica</h1>
             
-            <p class="hero-subtitle">
-                Servicios de protección ejecutiva para organizaciones industriales y corporativas. 
-                Metodología basada en inteligencia predictiva, análisis de amenazas y gestión proactiva de riesgos operacionales.
+            <p class="hero-subtitle" style="max-width:680px;margin:1.5rem auto;">
+                Análisis multidimensional de riesgos para alta dirección. No vendemos soluciones genéricas — diagnosticamos primero, protegemos después.
             </p>
             
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                <a href="https://wa.me/573219057059?text=Hola%20PRIORISK%2C%20estoy%20interesado%20en%20solicitar%20una%20evaluación%20de%20riesgos%20ejecutivos" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Solicitar Evaluación por WhatsApp</a>
-                <a href="#metodologia" class="btn btn-secondary">Conocer Metodología</a>
+            <div style="display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem;">
+                <a href="cotizacion.html" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem">📊 Cotizador Interactivo</a>
+                <a href="servicios.html" class="btn btn-secondary" style="font-size:1.1rem;padding:1rem 2.5rem">Ver Servicios</a>
+                <a href="#metodologia" class="btn btn-outline" style="background:transparent;border:2px solid var(--color-accent);color:var(--color-accent);font-size:1rem;padding:1rem 2rem">Metodología</a>
             </div>
         </div>
     </section>
@@ -1070,40 +1132,54 @@
     <!-- ==========================================
          SECCIÓN: SERVICIOS PRINCIPALES
     =========================================== -->
-    <section id="servicios" class="section">
+    <section id="servicios" class="section" style="padding:5rem 0">
         <div class="container">
-            <h2 class="text-center mb-lg">Servicios Principales</h2>
+            <div style="text-align:center;margin-bottom:4rem">
+                <h2 style="font-size:2.5rem;margin-bottom:1rem">Servicios Principales</h2>
+                <p style="color:var(--color-grey);max-width:600px;margin:0 auto;font-size:1.1rem">Cada servicio está diseñado para un contexto de riesgo específico.</p>
+            </div>
             
-            <div class="grid grid-3">
-                <div class="service-card">
-                    <h4>🎯 Diagnóstico Estratégico de Riesgo Ejecutivo</h4>
-                    <p>Análisis integral del perfil de riesgo de altos ejecutivos basado en inteligencia estratégica y evaluación multidimensional.</p>
+            <!-- Imagen hero de servicios -->
+            <div style="margin-bottom:4rem">
+                <img src="images/data-analytics.jpg" alt="Análisis de Datos PRIORISK" style="width:100%;max-width:900px;height:auto;border-radius:12px;display:block;margin:0 auto;box-shadow:0 10px 40px rgba(0,0,0,0.3)">
+            </div>
+            
+            <div class="grid grid-3" style="gap:2rem">
+                <div class="service-card" style="padding:2rem">
+                    <h4 style="margin-bottom:1rem">🎯 Diagnóstico Estratégico de Riesgo Ejecutivo</h4>
+                    <p style="line-height:1.8">Análisis integral del perfil de riesgo de altos ejecutivos basado en inteligencia estratégica y evaluación multidimensional.</p>
                 </div>
                 
-                <div class="service-card">
-                    <h4>⚡ Diagnóstico Express de Riesgo y Protección</h4>
-                    <p>Evaluación rápida para decisiones urgentes o preliminares. Ideal cuando se requiere una valoración inmediata del contexto de riesgo.</p>
+                <div class="service-card" style="padding:2rem">
+                    <h4 style="margin-bottom:1rem">⚡ Diagnóstico Express de Riesgo y Protección</h4>
+                    <p style="line-height:1.8">Evaluación rápida para decisiones urgentes o preliminares. Ideal cuando se requiere una valoración inmediata del contexto de riesgo.</p>
                 </div>
                 
-                <div class="service-card">
-                    <h4>🏠 Evaluación de Riesgo Residencial</h4>
-                    <p>Auditoría de seguridad física en viviendas y propiedades. Análisis de vulnerabilidades arquitectónicas y perimetrales.</p>
+                <div class="service-card" style="padding:2rem">
+                    <h4 style="margin-bottom:1rem">🏠 Evaluación de Riesgo Residencial</h4>
+                    <p style="line-height:1.8">Auditoría de seguridad física en viviendas y propiedades. Análisis de vulnerabilidades arquitectónicas y perimetrales.</p>
                 </div>
                 
-                <div class="service-card">
-                    <h4>🗺️ Análisis de Rutas y Movilidad</h4>
-                    <p>Estudio de trayectos habituales y puntos críticos de exposición durante desplazamientos rutinarios o excepcionales.</p>
+                <div class="service-card" style="padding:2rem">
+                    <h4 style="margin-bottom:1rem">🗺️ Análisis de Rutas y Movilidad</h4>
+                    <p style="line-height:1.8">Estudio de trayectos habituales y puntos críticos de exposición durante desplazamientos rutinarios o excepcionales.</p>
                 </div>
                 
-                <div class="service-card">
-                    <h4>🛡️ Diseño de Esquemas de Protección Ejecutiva</h4>
-                    <p>Propuesta de esquemas personalizados de protección personal adaptados al nivel de riesgo y contexto operativo del ejecutivo.</p>
+                <div class="service-card" style="padding:2rem">
+                    <h4 style="margin-bottom:1rem">🛡️ Diseño de Esquemas de Protección Ejecutiva</h4>
+                    <p style="line-height:1.8">Propuesta de esquemas personalizados de protección personal adaptados al nivel de riesgo y contexto operativo del ejecutivo.</p>
                 </div>
                 
-                <div class="service-card">
-                    <h4>📊 Acompañamiento Estratégico en Seguridad</h4>
-                    <p>Asesoría continua en gestión de riesgo y toma de decisiones. Monitoreo permanente de variables críticas y actualización de protocolos.</p>
+                <div class="service-card" style="padding:2rem">
+                    <h4 style="margin-bottom:1rem">📊 Acompañamiento Estratégico en Seguridad</h4>
+                    <p style="line-height:1.8">Asesoría continua en gestión de riesgo y toma de decisiones. Monitoreo permanente de variables críticas y actualización de protocolos.</p>
                 </div>
+            </div>
+            
+            <!-- CTA a página de servicios completa -->
+            <div style="text-align:center;margin-top:4rem">
+                <a href="servicios.html" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem">Ver Portafolio Completo de Servicios →</a>
+                <p style="margin-top:1rem;color:var(--color-grey);font-size:0.95rem">Incluye comparativa Express vs Premium y casos de uso</p>
             </div>
         </div>
     </section>
@@ -1401,17 +1477,24 @@
     <!-- ==========================================
          SECCIÓN: CALL TO ACTION FINAL
     =========================================== -->
-    <section id="contacto" class="cta-section">
-        <div class="container">
-            <h2>¿Está Seguro de que su Esquema de Seguridad Responde al Riesgo Real que Enfrenta?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: var(--spacing-lg);">
+    <section id="contacto" class="cta-section" style="padding:6rem 0;background:linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%)">
+        <div class="container" style="max-width:900px">
+            <h2 style="font-size:2.5rem;margin-bottom:1.5rem;line-height:1.3">¿Está Seguro de que su Esquema de Seguridad Responde al Riesgo Real?</h2>
+            <p style="font-size: 1.15rem; margin-bottom: 3rem;color:var(--color-grey);line-height:1.8">
                 En PRIORISK analizamos amenazas, vulnerabilidades e impacto para diseñar estrategias de protección 
                 ajustadas a cada nivel de exposición.
             </p>
             
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://wa.me/573219057059?text=Hola%20PRIORISK%2C%20necesito%20información%20sobre%20protección%20ejecutiva" target="_blank" rel="noopener noreferrer" class="btn btn-primary">💬 Contactar por WhatsApp</a>
-                <a href="/cdn-cgi/l/email-protection#2d4e4243594c4e59426d5d5f44425f445e46034e4240" class="btn btn-secondary">✉️ Enviar Email</a>
+            <!-- CTA Principal: Cotizador -->
+            <div style="background:rgba(212,175,55,0.1);border:2px solid var(--color-accent);border-radius:12px;padding:2.5rem;margin-bottom:3rem">
+                <h3 style="font-size:1.5rem;margin-bottom:1rem;color:var(--color-accent)">📊 Obtenga una Estimación Personalizada</h3>
+                <p style="margin-bottom:1.5rem;font-size:1.05rem;line-height:1.7">Configure su diagnóstico de riesgo en 2 minutos y reciba una cotización adaptada a su perfil ejecutivo.</p>
+                <a href="cotizacion.html" class="btn btn-primary" style="font-size:1.2rem;padding:1.2rem 3rem;display:inline-block">Usar Cotizador Interactivo →</a>
+            </div>
+            
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/573219057059?text=Hola%20PRIORISK%2C%20necesito%20información%20sobre%20protección%20ejecutiva" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:1.05rem;padding:1rem 2rem">💬 Contactar por WhatsApp</a>
+                <a href="mailto:priorisk.consulting@gmail.com" class="btn btn-secondary" style="font-size:1.05rem;padding:1rem 2rem">✉️ Enviar Email</a>
             </div>
             
             <p style="margin-top: var(--spacing-md); font-size: 0.95rem; opacity: 0.9;">
